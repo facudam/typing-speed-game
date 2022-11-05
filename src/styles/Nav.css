@@ -1,0 +1,17 @@
+
+.header__menu {
+    display: flex;
+    width: 100%;
+    background-color: aliceblue;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.header__menu nav ul{
+    display: flex;
+    list-style: none;
+}
+
+.header__menu nav ul li {
+    margin-left: 20px;
+}

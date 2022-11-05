@@ -1,27 +1,20 @@
-
+import tipearIMG from '../images/tipearIMG.png';
+import { Nav } from './Nav';
 
 export const Header = () => {
     return(
         <header>
-            <div className="header__menu">
-                <span>Typing Speed Game</span>
-                <nav>
-                    <ul>
-                        <li>Play</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                    </ul>
-                </nav>
-            </div>
+            <Nav />
             <div>
                 <div>
                     <h1>Typing Speed Game</h1>
                     <p>¡Tipea tan rápido como puedas contra-reloj, y establece un nuevo record!</p>
                 </div>
+                <div>
+                    <img src={ tipearIMG }/>
+                </div>
             </div>
-            <div>
-                <img />
-            </div>
+            
             
         </header>
     )
