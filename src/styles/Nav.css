@@ -1,15 +1,16 @@
 
 .main-container-menu {
     width: 100%;
-    background-color: rgb(103, 156, 202);
+    background-color: #2196f3;
+    color: #fff;
+    font-size: 1.2rem;
 }
 
 .header__menu {
     display: flex;
     width: 100%;
-    max-width: 1500px;
+    max-width: var(--web-max-width);
     margin: auto;
-    
     justify-content: space-between;
     padding: 15px;
 }

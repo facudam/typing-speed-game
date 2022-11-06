@@ -1,4 +1,5 @@
 import tipearIMG from '../images/tipearIMG.png';
+import flechaAbajo from '../images/flechaAbajo.png';
 import { Nav } from './Nav';
 
 import '../styles/Header.css'
@@ -14,12 +15,13 @@ export const Header = () => {
                         <p>¡Tipea tan rápido como puedas contra-reloj, y establece un nuevo record!</p>
                     </div>
                     <div className='header__container-img'>
-                        <img src={ tipearIMG }/>
+                        <img src={ tipearIMG } alt='hombrecito-tipeando'/>
                     </div>
                 </div>
-            </div>
-            
-            
+                <a className='a__flecha' href='#'>
+                    <img src={ flechaAbajo } alt='flecha'/>
+                </a>
+            </div>    
         </header>
     )
 }

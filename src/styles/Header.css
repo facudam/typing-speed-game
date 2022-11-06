@@ -5,8 +5,8 @@
 
 .header__container {
     width: 100%;
-    max-width: 1500px;
-    height: 50vh;
+    max-width: var(--web-max-width);
+    height: 65vh;
     margin: auto;
     display: flex;
     padding: 50px;
@@ -38,4 +38,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.a__flecha {
+    display: flex;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.a__flecha img {
+    width: 70px;
+    margin: auto;
 }

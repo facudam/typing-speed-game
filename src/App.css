@@ -3,3 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --web-max-width: 1500px;
+    --margin-beetween-containers: 100px;
+}
