@@ -1,8 +1,15 @@
 
+.main-container-menu {
+    width: 100%;
+    background-color: rgb(103, 156, 202);
+}
+
 .header__menu {
     display: flex;
     width: 100%;
-    background-color: aliceblue;
+    max-width: 1500px;
+    margin: auto;
+    
     justify-content: space-between;
     padding: 15px;
 }

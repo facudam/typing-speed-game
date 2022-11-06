@@ -1,0 +1,41 @@
+.main-container {
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.header__container {
+    width: 100%;
+    max-width: 1500px;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    padding: 50px;
+    
+}
+
+.header__container-title {
+    background-color: aliceblue;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header__container-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header__container-title p {
+    font-size: 1.2rem;
+}
+
+.header__container-img {
+    
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
