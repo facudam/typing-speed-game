@@ -1,6 +1,9 @@
+import { useContext } from 'react';
+import { Context } from '../contexts/Context';
 import '../styles/Nav.css';
 
 export const Nav = () => {
+    const { puntaje, mejorPuntaje } = useContext(Context)
     return(
         <div className='main-container-menu'>
             <div className="header__menu">
@@ -8,8 +11,8 @@ export const Nav = () => {
                 <nav>
                     <ul>
                         <li>Play</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li>Puntaje: { puntaje }</li>
+                        <li>Mi record: { mejorPuntaje }</li>
                     </ul>
                 </nav>
             </div>

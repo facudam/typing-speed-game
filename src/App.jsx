@@ -1,6 +1,6 @@
-
-import './App.css'
 import { Header } from './components/Header'
+import { Juego } from './components/Juego'
+import './App.css'
 
 function App() {
   
@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Juego />
     </div>
   )
 }

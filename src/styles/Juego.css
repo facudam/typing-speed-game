@@ -1,0 +1,6 @@
+
+.juego-container {
+    margin-top: var(--margin-beetween-containers);
+    
+    text-align: center;
+}
