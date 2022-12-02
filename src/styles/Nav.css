@@ -1,7 +1,7 @@
 
 .main-container-menu {
     width: 100%;
-    background-color: #2196f3;
+    background-color: var(--azul);
     color: #fff;
     font-size: 1.2rem;
 }

@@ -1,6 +1,6 @@
 .main-container {
     width: 100%;
-    background-color: aliceblue;
+    background-color: var(--alice-blue);
 }
 
 .header__container {
@@ -14,7 +14,7 @@
 }
 
 .header__container-title {
-    background-color: aliceblue;
+    background-color: var(--alice-blue);
     width: 50%;
     display: flex;
     flex-direction: column;

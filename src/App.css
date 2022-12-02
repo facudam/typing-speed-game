@@ -6,5 +6,11 @@
 
 :root {
     --web-max-width: 1500px;
-    --margin-beetween-containers: 100px;
+    --padding-beetween-containers: 100px;
+    --margin-beetween-titles: 15px;
+    --margin-for-buttons: 15px;
+    --azul: #2196f3;
+    --alice-blue: rgb(240, 248, 255);
+    --color-verde: rgb(16, 237, 16);
+    --blanco: #fff;
 }
