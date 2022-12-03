@@ -1,7 +1,6 @@
 
 .juego-container {
-    padding: var(--padding-beetween-containers) 0px
-    ;
+    padding: var(--padding-beetween-containers) 0px;
     text-align: center;
     
 }

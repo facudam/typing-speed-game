@@ -1,13 +1,17 @@
+import { useContext } from 'react';
+import { Context } from '../contexts/Context';
+import { Juego } from './Juego';
 import tipearIMG from '../images/tipearIMG.png';
 import flechaAbajo from '../images/flechaAbajo.png';
-import { Nav } from './Nav';
-
 import '../styles/Header.css'
 
+
 export const Header = () => {
+
+    const { juegoIniciado } = useContext(Context);
     return(
+     <>
         <header>
-            <Nav />
             <div className='main-container'>
                 <div className='header__container'>
                     <div className='header__container-title'>
@@ -21,7 +25,10 @@ export const Header = () => {
                 <a className='a__flecha' href='#'>
                     <img src={ flechaAbajo } alt='flecha'/>
                 </a>
-            </div>    
+            </div>
+                
         </header>
+        <Juego />
+     </>
     )
 }
