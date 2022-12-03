@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Context } from '../contexts/Context';
-import { Juego } from './Juego';
+import { SectionInvitarJuego } from './SectionInvitarJuego';
 import tipearIMG from '../images/tipearIMG.png';
 import flechaAbajo from '../images/flechaAbajo.png';
 import '../styles/Header.css'
@@ -28,7 +28,7 @@ export const Header = () => {
             </div>
                 
         </header>
-        <Juego />
+        <SectionInvitarJuego />
      </>
     )
 }

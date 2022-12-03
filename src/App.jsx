@@ -1,9 +1,10 @@
 import { useContext } from 'react'
 import { Context } from './contexts/Context'
 import { Header } from './components/Header'
-import { Juego } from './components/Juego'
-import './App.css'
 import { Nav } from './components/Nav'
+import { Juego } from './components/Juego'
+import './App.css';
+
 
 function App() {
   
@@ -16,7 +17,7 @@ function App() {
         (!juegoIniciado)
           ? <Header />
             
-          : <p className='juego-iniciado'>Juego Iniciado</p>
+          : <Juego />
       }
       
     </div>
