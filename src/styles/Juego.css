@@ -30,7 +30,27 @@
     border: 2px solid red;
     width: 100%;
     max-width: var(--web-max-width);
-    padding: 20px;
     margin-top: var(--margin-beetween-titles);
     min-height: 100px;
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.regla {
+    position: absolute;
+    animation: opacidad 2s ease;
+    padding: 10px;
+}
+
+@keyframes opacidad {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
