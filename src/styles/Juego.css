@@ -1,9 +1,5 @@
 .juego-iniciado {
-    margin: auto;
-    width: 100%;
     animation: iniciarJuego 1s ease;
-    padding: var(--padding-for-containers) 0px;
-    background-color: var(--alice-blue);
 }
 
 @keyframes iniciarJuego {
@@ -16,22 +12,13 @@
     }
 }
 
-.juego-iniciado__reglas {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    
-}
-
 .juego-iniciado__reglas__slider {
     margin: auto;
     width: 100%;
     max-width: 900px;
-    margin-top: var(--margin-beetween-titles);
-    
     overflow: hidden;
+    background-color: var(--alice-blue);
+    padding: 10px 0px;
 }
 
 .reglas-container {
@@ -39,7 +26,6 @@
     width: 500%;
     justify-content: space-between;
     align-items: center;
-    height: inherit;
     animation: slideMove 40s ease-in-out infinite running;
 }
 
@@ -47,15 +33,17 @@
     display: inline-block;
     width: 100%;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 @keyframes slideMove {
     0% {
        margin-left: 0;
+       opacity: 0;
     }
     15% {
         margin-left: 0;
+        opacity: 1;
     }
     20% {
         margin-left: -100%;
@@ -85,6 +73,17 @@
         margin-left: -500%;
     }
     
+}
+
+
+.en-juego {
+    padding: 50px;
+}
+
+.p-enter-press {
+    color: rgb(30, 186, 30);
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 
