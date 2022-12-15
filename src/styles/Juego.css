@@ -15,7 +15,6 @@
 .juego-iniciado__reglas__slider {
     margin: auto;
     width: 100%;
-    max-width: 900px;
     overflow: hidden;
     background-color: var(--alice-blue);
     padding: 10px 0px;
@@ -81,10 +80,42 @@
 }
 
 .p-enter-press {
-    color: rgb(30, 186, 30);
-    font-size: 1.2rem;
+    color: rgb(37, 173, 222);
+    font-size: 1.5rem;
     text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    animation: latido 1s ease infinite;
 }
 
+@keyframes latido {
+    0% {
+        transform: scale(0.9);
+    }
 
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+/* Sección de palabra y letra */
+
+.palabra-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.letra-container {
+    padding: 10px;
+    background-color: rgb(28, 111, 111);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
 

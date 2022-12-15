@@ -1,11 +1,22 @@
 
+import { useContext, useEffect } from 'react';
+import { Context } from '../contexts/Context';
 import '../styles/Juego.css';
 import { PalabraEnJuego } from './PalabraEnJuego';
 
 
 export const Juego = () => {
 
-    let hola = false;
+    useEffect(() => {
+      
+    document.addEventListener('keydown', (e) => {
+        if((e).key == 'Enter') { console.log('inicio de juego'); setJuegoIniciado(true)}
+    })
+
+    }, [])
+    
+
+    const { juegoIniciado, setJuegoIniciado } = useContext(Context)
     
     return(
         <div className='juego-iniciado'>
@@ -21,7 +32,7 @@ export const Juego = () => {
 
             <div className='en-juego'>
                 {
-                    !hola 
+                    juegoIniciado 
                         ? <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
                         : <PalabraEnJuego />
                 }
