@@ -1,6 +1,6 @@
 
 .Section-invitar-juego-container {
-    padding: var(--padding-for-containers) 0px;
+    padding-top: var(--padding-for-containers);
     text-align: center;
     
 }

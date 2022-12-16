@@ -2,11 +2,17 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--alice-blue);
+    background-color: var(--azul);
     top: 0;
     left: 0;
     opacity: .4;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.modal-contador {
+    font-size: 15rem;
+    color: rgb(255, 255, 255);
+    z-index: 10;
 }

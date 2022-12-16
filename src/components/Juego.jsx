@@ -8,7 +8,7 @@ import { PalabraEnJuego } from './PalabraEnJuego';
 
 export const Juego = () => {
 
-    const { juegoActivado, setJuegoActivado } = useContext(Context);
+    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra } = useContext(Context);
 
     const activar = (e) => {
         if((e).key == 'Enter') { 
@@ -43,9 +43,13 @@ export const Juego = () => {
 
             <div className='en-juego'>
                 {
-                    !juegoActivado 
+                    (!juegoActivado) 
                         ? <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
-                        : <CuentaRegresiva />
+                        : !aparecerPalabra 
+                            ? <CuentaRegresiva
+                                setPalabra={ setAparecerPalabra }
+                              /> 
+                            : <PalabraEnJuego />
                 }
             </div>
         </div>
