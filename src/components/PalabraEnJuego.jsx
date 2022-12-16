@@ -12,7 +12,10 @@ export const PalabraEnJuego = () => {
         <div className="palabra-container">
             {
                 letrasDePalabra.map(letra => (
-                    <LetraDePalabra letra={ letra }/>
+                    <LetraDePalabra 
+                        letra={ letra }
+                        key={ Math.random() * 1000000 }
+                    />
                 ))
             }
         </div>

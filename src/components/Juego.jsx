@@ -1,22 +1,33 @@
 
 import { useContext, useEffect } from 'react';
 import { Context } from '../contexts/Context';
+import { CuentaRegresiva } from '../Modales/CuentaRegresiva';
 import '../styles/Juego.css';
 import { PalabraEnJuego } from './PalabraEnJuego';
 
 
 export const Juego = () => {
 
+    const { juegoActivado, setJuegoActivado } = useContext(Context);
+
+    const activar = (e) => {
+        if((e).key == 'Enter') { 
+            setJuegoActivado(true); 
+        }
+        
+    }
+
     useEffect(() => {
       
-    document.addEventListener('keydown', (e) => {
-        if((e).key == 'Enter') { console.log('inicio de juego'); setJuegoIniciado(true)}
-    })
+    document.addEventListener('keydown', activar)
+
+    return () => {
+        document.removeEventListener('keydown', activar)
+    }
 
     }, [])
-    
 
-    const { juegoIniciado, setJuegoIniciado } = useContext(Context)
+
     
     return(
         <div className='juego-iniciado'>
@@ -32,9 +43,9 @@ export const Juego = () => {
 
             <div className='en-juego'>
                 {
-                    juegoIniciado 
+                    !juegoActivado 
                         ? <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
-                        : <PalabraEnJuego />
+                        : <CuentaRegresiva />
                 }
             </div>
         </div>
