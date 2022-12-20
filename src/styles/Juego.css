@@ -101,21 +101,5 @@
     }
 }
 
-/* Sección de palabra y letra */
 
-.palabra-container {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-}
-
-.letra-container {
-    padding: 10px;
-    background-color: rgb(28, 111, 111);
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #fff;
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
-}
 
