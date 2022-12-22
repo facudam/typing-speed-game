@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useContext } from "react";
+import { Context } from "../contexts/Context";
 import { LetraDePalabra } from "./LetraDePalabra";
 import { palabrasDeNivelUno } from "../PALABRAS/nivel1";
 import { getRandomWord } from "../helpers/getRandomWord";
 import '../styles/PalabraEnJuego.css';
 
+
 export const PalabraEnJuego = () => {
 
-    const [tipearPalabra, setTipearPalabra] = useState([])
+    const { juegoActivado } = useContext(Context)
+
+    const [tipearPalabra, setTipearPalabra] = useState('')
 
     const handleKeydown = (e) => {
         setTipearPalabra(e.key)
@@ -26,8 +30,8 @@ export const PalabraEnJuego = () => {
    
    
     
-
-    const letrasDePalabra = getRandomWord(palabrasDeNivelUno).toUpperCase().split('');
+   // acá tengo que guardar la información para que no se vuelva a cargar
+    const letrasDePalabra = useMemo(() => getRandomWord(palabrasDeNivelUno).toUpperCase().split(''), [ juegoActivado ]) 
 
     return(
         <div>
@@ -44,12 +48,11 @@ export const PalabraEnJuego = () => {
             <div className="tipeo-container">
                 {
                     letrasDePalabra.map((letra, index) => (
-                        <input
+                        <div
                             key={ index } 
-                            className="tipeo-container__letra" 
-                            type='text' 
-                            defaultValue={index}
-                        />
+                            className="tipeo-container__letra"> 
+                            {index} 
+                        </div>
                     ))
                 }
             </div>
