@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { LetraDePalabra } from "./LetraDePalabra";
 import { palabrasDeNivelUno } from "../PALABRAS/nivel1";
 import { getRandomWord } from "../helpers/getRandomWord";
@@ -6,11 +6,23 @@ import '../styles/PalabraEnJuego.css';
 
 export const PalabraEnJuego = () => {
 
+    const [tipearPalabra, setTipearPalabra] = useState([])
+
+    const handleKeydown = (e) => {
+        setTipearPalabra(e.key)
+        console.log(tipearPalabra)
+    }
+
    useEffect(() => {
-     console.log('hola')
-   
+     window.addEventListener('keydown', handleKeydown)
+
+     return () => {
+        window.removeEventListener('keydown', handleKeydown)
+     }
      
    }, [])
+
+   
    
    
     
@@ -31,12 +43,12 @@ export const PalabraEnJuego = () => {
             </div>
             <div className="tipeo-container">
                 {
-                    letrasDePalabra.map(letra => (
+                    letrasDePalabra.map((letra, index) => (
                         <input
-                            key={ Math.random() * 1000000567674 } 
+                            key={ index } 
                             className="tipeo-container__letra" 
                             type='text' 
-                            value={''}
+                            defaultValue={index}
                         />
                     ))
                 }

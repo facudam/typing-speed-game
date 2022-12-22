@@ -33,3 +33,7 @@
     border-bottom: thin solid black;
 }
 
+.tipeo-container__letra:focus {
+    outline: none;
+}
+
