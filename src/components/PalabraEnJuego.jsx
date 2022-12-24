@@ -19,7 +19,6 @@ export const PalabraEnJuego = () => {
         
     }
 
-    console.log(palabraTipeada)
 
    useEffect(() => {
      window.addEventListener('keydown', handleKeydown)
@@ -52,7 +51,7 @@ export const PalabraEnJuego = () => {
                         <div
                             key={ index } 
                             className="tipeo-container__letra"> 
-                            {index} 
+                            {palabraTipeada.charAt(index)} 
                         </div>
                     ))
                 }
