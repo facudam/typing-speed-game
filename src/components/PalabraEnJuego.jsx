@@ -10,12 +10,16 @@ export const PalabraEnJuego = () => {
 
     const { juegoActivado } = useContext(Context)
 
-    const [tipearPalabra, setTipearPalabra] = useState('')
+    const [ palabraTipeada, setPalabraTipeada ] = useState('')
 
     const handleKeydown = (e) => {
-        setTipearPalabra(e.key)
-        console.log(tipearPalabra)
+        
+        const letraApretada = e.key;
+        setPalabraTipeada(prevPalabra => prevPalabra + letraApretada)
+        
     }
+
+    console.log(palabraTipeada)
 
    useEffect(() => {
      window.addEventListener('keydown', handleKeydown)
@@ -26,11 +30,8 @@ export const PalabraEnJuego = () => {
      
    }, [])
 
-   
-   
-   
     
-   // acá tengo que guardar la información para que no se vuelva a cargar
+   // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
     const letrasDePalabra = useMemo(() => getRandomWord(palabrasDeNivelUno).toUpperCase().split(''), [ juegoActivado ]) 
 
     return(
