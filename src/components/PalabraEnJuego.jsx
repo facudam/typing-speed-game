@@ -10,7 +10,8 @@ export const PalabraEnJuego = () => {
 
     const { juegoActivado } = useContext(Context)
 
-    const [ palabraTipeada, setPalabraTipeada ] = useState('')
+    const [ palabraTipeada, setPalabraTipeada ] = useState('');
+    const [ cantidadLetrasRamdomWord, setCantidadLetrasRandomWord ] = useState(0)
 
     const handleKeydown = (e) => {
         
@@ -31,7 +32,19 @@ export const PalabraEnJuego = () => {
 
     
    // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
-    const letrasDePalabra = useMemo(() => getRandomWord(palabrasDeNivelUno).toUpperCase().split(''), [ juegoActivado ]) 
+   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelUno), [ juegoActivado ]);
+    const letrasDePalabra = palabraRandom.toUpperCase().split('')
+    
+
+    if(palabraRandom.length === palabraTipeada.length) {
+        if(palabraRandom === palabraTipeada) {
+            console.log('son iguales')
+        } else {
+            console.log('le erraste vieja')
+        }
+        
+    } 
+    
 
     return(
         <div>
@@ -51,7 +64,7 @@ export const PalabraEnJuego = () => {
                         <div
                             key={ index } 
                             className="tipeo-container__letra"> 
-                            {palabraTipeada.charAt(index)} 
+                            {palabraTipeada.charAt(index).toUpperCase()} 
                         </div>
                     ))
                 }
