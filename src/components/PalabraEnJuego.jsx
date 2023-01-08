@@ -8,19 +8,11 @@ import '../styles/PalabraEnJuego.css';
 
 export const PalabraEnJuego = () => {
 
-    const { juegoActivado } = useContext(Context)
-
+    const { juegoActivado, setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje } = useContext(Context)
     const [ palabraTipeada, setPalabraTipeada ] = useState('');
-    const [ cantidadLetrasRamdomWord, setCantidadLetrasRandomWord ] = useState(0)
+    
 
-    const handleKeydown = (e) => {
-        
-        const letraApretada = e.key;
-        setPalabraTipeada(prevPalabra => prevPalabra + letraApretada)
-        
-    }
-
-
+    
    useEffect(() => {
      window.addEventListener('keydown', handleKeydown)
 
@@ -30,17 +22,34 @@ export const PalabraEnJuego = () => {
      
    }, [])
 
+   useEffect(() => {
+        if(puntaje > mejorPuntaje) {
+            setMejorPuntaje(puntaje)
+            localStorage.setItem('mejorPuntaje', puntaje ?? 0)
+        }
+   }, [puntaje])
+
+    const handleKeydown = (e) => {     
+        const letraApretada = e.key;
+        setPalabraTipeada(prevPalabra => prevPalabra + letraApretada)      
+      }
+
     
    // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
-   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelUno), [ juegoActivado ]);
-    const letrasDePalabra = palabraRandom.toUpperCase().split('')
+   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelUno), [ puntaje ]);
+   const letrasDePalabra = palabraRandom.toUpperCase().split('')
     
 
     if(palabraRandom.length === palabraTipeada.length) {
         if(palabraRandom === palabraTipeada) {
             console.log('son iguales')
+            setPuntaje(puntaje + 10)
+            setPalabraTipeada('')
+            
         } else {
             console.log('le erraste vieja')
+            setPalabraTipeada('hola')
+            setJuegoActivado(false)
         }
         
     } 
@@ -64,7 +73,7 @@ export const PalabraEnJuego = () => {
                         <div
                             key={ index } 
                             className="tipeo-container__letra"> 
-                            {palabraTipeada.charAt(index).toUpperCase()} 
+                            { palabraTipeada.charAt(index).toUpperCase() } 
                         </div>
                     ))
                 }

@@ -12,7 +12,8 @@ export const Juego = () => {
 
     const activar = (e) => {
         if((e).key == 'Enter') { 
-            setJuegoActivado(true); 
+            setJuegoActivado(true);
+             
         }
         
     }
@@ -49,7 +50,7 @@ export const Juego = () => {
                             ? <CuentaRegresiva
                                 setPalabra={ setAparecerPalabra }
                               /> 
-                            : <PalabraEnJuego />
+                            : <PalabraEnJuego  />
                 }
             </div>
         </div>

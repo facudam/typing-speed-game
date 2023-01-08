@@ -10,7 +10,11 @@ export const ContextProvider = ({children}) => {
     
     // ++++++ Estados para los puntajes ++++ /
     const [ puntaje, setPuntaje ] = useState(0)
-    const [ mejorPuntaje, setMejorPuntaje ] = useState(100)
+    const [ mejorPuntaje, setMejorPuntaje ] = useState(
+        localStorage.getItem('mejorPuntaje') ?? 0
+    )
+
+
     return(
         <Context.Provider value={{
             juegoIniciado,
