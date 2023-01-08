@@ -10,9 +10,8 @@ export const Nav = () => {
                 <span>Typing Speed Game</span>
                 <nav>
                     <ul>
-                        <li>Play</li>
-                        <li>Puntaje: { puntaje }</li>
-                        <li>Mi record: { mejorPuntaje }</li>
+                        <li>Puntaje: { puntaje } pts.</li>
+                        <li>Mi record: <span className='span-record'>{ mejorPuntaje } pts.</span> </li>
                     </ul>
                 </nav>
             </div>

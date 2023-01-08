@@ -24,3 +24,9 @@
 .header__menu nav ul li {
     margin-left: 40px;
 }
+
+.span-record {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
