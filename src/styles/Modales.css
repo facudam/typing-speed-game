@@ -16,3 +16,14 @@
     color: rgb(255, 255, 255);
     z-index: 10;
 }
+
+
+/* ++++ Modal Perdiste ++++ */
+
+.perdiste {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: rgb(245, 0, 0);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}

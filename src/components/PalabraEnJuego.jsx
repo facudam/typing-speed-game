@@ -4,6 +4,7 @@ import { LetraDePalabra } from "./LetraDePalabra";
 import { palabrasDeNivelUno } from "../PALABRAS/nivel1";
 import { getRandomWord } from "../helpers/getRandomWord";
 import '../styles/PalabraEnJuego.css';
+import { Perdiste } from "../Modales/Perdiste";
 
 
 export const PalabraEnJuego = () => {
@@ -57,7 +58,7 @@ export const PalabraEnJuego = () => {
     
 
     return(
-        <div>
+        <>
             <div className="palabra-container">
                 {
                     letrasDePalabra.map(letra => (
@@ -79,7 +80,8 @@ export const PalabraEnJuego = () => {
                     ))
                 }
             </div>
-        </div>
+            <Perdiste />
+        </>
         
     )
 }
