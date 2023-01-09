@@ -14,6 +14,8 @@ export const ContextProvider = ({children}) => {
         localStorage.getItem('mejorPuntaje') ?? 0
     )
 
+    const [ palabraTipeada, setPalabraTipeada ] = useState('');
+
 
     return(
         <Context.Provider value={{
@@ -26,7 +28,9 @@ export const ContextProvider = ({children}) => {
             juegoActivado,
             setJuegoActivado,
             aparecerPalabra, 
-            setAparecerPalabra
+            setAparecerPalabra,
+            palabraTipeada,
+            setPalabraTipeada
             }} >{ children }</Context.Provider>
     )
 }

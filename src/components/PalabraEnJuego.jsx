@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useContext } from "react";
+import { useEffect, useMemo, useContext } from "react";
 import { Context } from "../contexts/Context";
 import { LetraDePalabra } from "./LetraDePalabra";
 import { palabrasDeNivelUno } from "../PALABRAS/nivel1";
@@ -8,8 +8,8 @@ import '../styles/PalabraEnJuego.css';
 
 export const PalabraEnJuego = () => {
 
-    const { juegoActivado, setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje } = useContext(Context)
-    const [ palabraTipeada, setPalabraTipeada ] = useState('');
+    const { juegoActivado, setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra } = useContext(Context)
+    
     
 
     
@@ -47,9 +47,10 @@ export const PalabraEnJuego = () => {
             setPalabraTipeada('')
             
         } else {
-            console.log('le erraste vieja')
-            setPalabraTipeada('hola')
+            setPuntaje(0)
+            setPalabraTipeada('')
             setJuegoActivado(false)
+            setAparecerPalabra(false)
         }
         
     } 
