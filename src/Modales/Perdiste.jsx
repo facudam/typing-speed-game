@@ -4,7 +4,7 @@ import '../styles/Modales.css'
 
     return(
         <div className="perdiste">
-            <p>¡Ups, lo has escrito mal! ¡Inténtalo de nuevo!</p>
+            <p className='perdiste__p'>¡Ups, lo has escrito mal! ¡Inténtalo de nuevo!</p>
         </div>
     )
 }
