@@ -5,11 +5,12 @@ import { palabrasDeNivelUno } from "../PALABRAS/nivel1";
 import { getRandomWord } from "../helpers/getRandomWord";
 import '../styles/PalabraEnJuego.css';
 import { Perdiste } from "../Modales/Perdiste";
+import { Reloj } from "./Reloj";
 
 
 export const PalabraEnJuego = () => {
 
-    const { juegoActivado, setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos } = useContext(Context)
     
     
 
@@ -39,19 +40,41 @@ export const PalabraEnJuego = () => {
    // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
    const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelUno), [ puntaje ]);
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
+/*
+   const tiempoDeJuego = () => {
+    if (segundos > 0) {
+     setSegundos( segundos - 1)
+
+    } else {
+        clearInterval(tiempoAjugar)
+    }
+    
+}
+
+let tiempoAjugar = setInterval(tiempoDeJuego , 1000)*/
+
+
     
 
     if(palabraRandom.length === palabraTipeada.length) {
         if(palabraRandom === palabraTipeada) {
-            console.log('son iguales')
             setPuntaje(puntaje + 10)
             setPalabraTipeada('')
             
         } else {
-            setPuntaje(0)
-            setPalabraTipeada('')
-            setJuegoActivado(false)
-            setAparecerPalabra(false)
+
+            setJuegoPerdido(true)
+
+            setTimeout(()=> {
+                setPuntaje(0)
+                setPalabraTipeada('')
+                setJuegoActivado(false)
+                setAparecerPalabra(false)
+                setSegundos(6)
+                setJuegoPerdido(false)
+            }, 2000)
+            
+
         }
         
     } 
@@ -59,6 +82,7 @@ export const PalabraEnJuego = () => {
 
     return(
         <>
+            <Reloj />
             <div className="palabra-container">
                 {
                     letrasDePalabra.map(letra => (
@@ -80,7 +104,11 @@ export const PalabraEnJuego = () => {
                     ))
                 }
             </div>
-            <Perdiste />
+
+            {
+                juegoPerdido && <Perdiste />
+            }
+            
         </>
         
     )

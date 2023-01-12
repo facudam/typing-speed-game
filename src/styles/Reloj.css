@@ -1,0 +1,21 @@
+
+.reloj-container {
+    background-color: rgb(248, 0, 0);
+    width: 120px;
+    margin: auto;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.reloj-container img {
+    width: 30px;
+    height: 45px;
+}
+
+.reloj-container p {
+    font-size: 3.5rem;
+    color: #fff;
+}

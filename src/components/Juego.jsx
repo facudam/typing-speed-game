@@ -6,6 +6,7 @@ import '../styles/Juego.css';
 import { PalabraEnJuego } from './PalabraEnJuego';
 
 
+
 export const Juego = () => {
 
     const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra } = useContext(Context);
