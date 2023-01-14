@@ -56,7 +56,7 @@ export const PalabraEnJuego = () => {
                 setPalabraTipeada('')
                 setJuegoActivado(false)
                 setAparecerPalabra(false)
-                setSegundos(6)
+                setSegundos(10)
                 setJuegoPerdido(false)
             }, 2000)
             
