@@ -9,12 +9,12 @@ import { PalabraEnJuego } from './PalabraEnJuego';
 
 export const Juego = () => {
 
-    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra } = useContext(Context);
+    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, setSegundosActivados } = useContext(Context);
 
     const activar = (e) => {
         if((e).key == 'Enter') { 
             setJuegoActivado(true);
-             
+            setSegundosActivados(true)
         }
         
     }

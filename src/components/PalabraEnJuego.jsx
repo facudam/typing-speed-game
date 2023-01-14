@@ -10,7 +10,7 @@ import { Reloj } from "./Reloj";
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados } = useContext(Context)
     
     
 
@@ -40,22 +40,8 @@ export const PalabraEnJuego = () => {
    // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
    const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelUno), [ puntaje ]);
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
-/*
-   const tiempoDeJuego = () => {
-    if (segundos > 0) {
-     setSegundos( segundos - 1)
-
-    } else {
-        clearInterval(tiempoAjugar)
-    }
-    
-}
-
-let tiempoAjugar = setInterval(tiempoDeJuego , 1000)*/
-
 
     
-
     if(palabraRandom.length === palabraTipeada.length) {
         if(palabraRandom === palabraTipeada) {
             setPuntaje(puntaje + 10)
@@ -64,7 +50,7 @@ let tiempoAjugar = setInterval(tiempoDeJuego , 1000)*/
         } else {
 
             setJuegoPerdido(true)
-
+            setSegundosActivados(false)
             setTimeout(()=> {
                 setPuntaje(0)
                 setPalabraTipeada('')

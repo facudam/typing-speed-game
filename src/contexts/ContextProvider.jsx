@@ -18,11 +18,9 @@ export const ContextProvider = ({children}) => {
     const [ juegoPerdido, setJuegoPerdido ] = useState(false)
 
     // ++++ Estados para el tiempo de juego y para niveles ++++ //
+    const [ segundosActivados, setSegundosActivados ] = useState(true)
     const [ segundos, setSegundos ] = useState(6)
     const [ nivel, setNivel ] = useState(1)
-
-
-    
 
 
     return(
@@ -42,7 +40,9 @@ export const ContextProvider = ({children}) => {
             juegoPerdido,
             setJuegoPerdido,
             segundos,
-            setSegundos
+            setSegundos,
+            segundosActivados,
+            setSegundosActivados
             }} >{ children }</Context.Provider>
     )
 }

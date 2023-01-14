@@ -1,12 +1,14 @@
 import { useContext, useState } from "react"
 import { Context } from "../contexts/Context"
-import reloj from '../images/reloj.png'
+import reloj from '../images/reloj.gif'
 import "../styles/Reloj.css"
 
 
 export const Reloj = () => {
 
-    const { segundos, setSegundos, setAparecerPalabra, setPalabraTipeada, setJuegoActivado, setJuegoPerdido, setPalabra } = useContext(Context);
+    const { segundos, setSegundos, setAparecerPalabra, setPalabraTipeada, setJuegoActivado, setJuegoPerdido, setPalabra, segundosActivados } = useContext(Context);
+
+    if(!segundosActivados) return;
 
     const tiempoDeJuego = () => {
 
@@ -15,17 +17,16 @@ export const Reloj = () => {
             clearInterval(intervaloDeJuego)
         
         } else {
-            setJuegoPerdido(true)
+            
             setTimeout(()=> {
                 setJuegoActivado(false)
                 setAparecerPalabra(false)
                 setPalabra(false)
                 setPuntaje(0)
-                setPalabraTipeada('')
-                setJuegoPerdido(false)
+                setPalabraTipeada('')  
                 setSegundos(6)
                 
-            }, 2000)
+            }, 1000)
         }       
     }
     
