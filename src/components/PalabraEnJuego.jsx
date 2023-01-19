@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useContext } from "react";
 import { Context } from "../contexts/Context";
 import { LetraDePalabra } from "./LetraDePalabra";
-import { palabrasDeNivelUno } from "../PALABRAS/nivel1";
+import { palabrasDeNivelDos } from "../PALABRAS/nivel2";
 import { getRandomWord } from "../helpers/getRandomWord";
 import '../styles/PalabraEnJuego.css';
 import { Perdiste } from "../Modales/Perdiste";
@@ -38,7 +38,7 @@ export const PalabraEnJuego = () => {
 
     
    // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
-   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelUno), [ puntaje ]);
+   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelDos), [ puntaje ]);
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
     
