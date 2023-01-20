@@ -2,6 +2,7 @@
 import { useContext, useEffect } from 'react';
 import { Context } from '../contexts/Context';
 import { CuentaRegresiva } from '../Modales/CuentaRegresiva';
+import { TiempoAcabado } from '../Modales/TiempoAcabado';
 import '../styles/Juego.css';
 import { PalabraEnJuego } from './PalabraEnJuego';
 
@@ -53,7 +54,9 @@ export const Juego = () => {
                               /> 
                             : <PalabraEnJuego  />
                 }
+
             </div>
+            
         </div>
     )
 } 

@@ -31,7 +31,7 @@
 
 .perdiste__p {
     background-color: red;
-    width: 100%;
+    width: 90%;
     max-width: 430px;
     margin: auto;
     padding: 20px;
@@ -64,3 +64,55 @@
         transform: scale(1);
     }
 }
+
+/* ++++++++++ Puntos Obtenidos ++++++++ */
+
+.puntos-obtenidos {
+    max-width: 500px;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 15px;
+    border: 5px dashed rgb(123, 116, 116);
+    animation: aparicion 1s linear forwards;
+    margin-top: 25px;
+    
+}
+
+.puntos-obtenidos p {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.puntos-obtenidos p span {
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+@keyframes aparicion {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ++++++++ Tiempo acabado ++++++++ */
+
+.tiempo-acabado {
+    margin-top: -40px;
+    width: 90%;
+    max-width: 430px;
+    background-color: green;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.tiempo-acabado p {
+    color: #fff;
+    text-align: center;
+    font-size: 1.3rem;
+}
+

@@ -1,4 +1,4 @@
-export const palabrasDeNivelDos = [
+export const palabrasDeNivel2 = [
     'idiosincracia',
     'otorrinolaringologo',
     'ventrilocuo',

@@ -1,16 +1,18 @@
 import { useEffect, useMemo, useContext } from "react";
 import { Context } from "../contexts/Context";
 import { LetraDePalabra } from "./LetraDePalabra";
-import { palabrasDeNivelDos } from "../PALABRAS/nivel2";
+import { palabrasDeNivel1 } from "../PALABRAS/nivel1";
+import { palabrasDeNivel2 } from "../PALABRAS/nivel2";
 import { getRandomWord } from "../helpers/getRandomWord";
 import '../styles/PalabraEnJuego.css';
-import { Perdiste } from "../Modales/Perdiste";
 import { Reloj } from "./Reloj";
+import { LostGame } from "./LostGame";
+import { TimeOver } from "./TimeOver";
 
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado } = useContext(Context)
     
     
 
@@ -38,7 +40,8 @@ export const PalabraEnJuego = () => {
 
     
    // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
-   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivelDos), [ puntaje ]);
+   
+   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]);
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
     
@@ -58,7 +61,7 @@ export const PalabraEnJuego = () => {
                 setAparecerPalabra(false)
                 setSegundos(10)
                 setJuegoPerdido(false)
-            }, 2000)
+            }, 4000)
             
 
         }
@@ -92,8 +95,15 @@ export const PalabraEnJuego = () => {
             </div>
 
             {
-                juegoPerdido && <Perdiste />
+                juegoPerdido && <LostGame />
             }
+
+            {
+                tiempoTerminado && <TimeOver />
+            }
+
+
+            
             
         </>
         

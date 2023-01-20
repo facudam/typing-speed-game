@@ -1,4 +1,4 @@
-export const palabrasDeNivelUno = [
+export const palabrasDeNivel1 = [
     "animalia",
     "restauracion",
     "edificacion",
