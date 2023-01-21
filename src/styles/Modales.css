@@ -104,10 +104,11 @@
     margin-top: -40px;
     width: 90%;
     max-width: 430px;
-    background-color: green;
+    background-color: rgb(2, 125, 2);
     margin: auto;
     padding: 20px;
     border-radius: 5px;
+    animation: mensajeAnimado 1s ease forwards;
 }
 
 .tiempo-acabado p {
