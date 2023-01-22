@@ -8,11 +8,14 @@ import '../styles/PalabraEnJuego.css';
 import { Reloj } from "./Reloj";
 import { LostGame } from "./LostGame";
 import { TimeOver } from "./TimeOver";
+import ReactAudioPlayer from 'react-audio-player';
+import ticktock from "../sonidos/ticktock.mp3"
+
 
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego } = useContext(Context)
     
     
 
@@ -51,18 +54,21 @@ export const PalabraEnJuego = () => {
             setPalabraTipeada('')
             
         } else {
-
+            setEnJuego(false)
             setJuegoPerdido(true)
             setSegundosActivados(false)
+            
             setTimeout(()=> {
+                setEnJuego(true)
                 setPuntaje(0)
                 setPalabraTipeada('')
                 setJuegoActivado(false)
                 setAparecerPalabra(false)
                 setSegundos(9)
                 setJuegoPerdido(false)
+                
             }, 5000)
-            
+    
 
         }
         
@@ -94,12 +100,23 @@ export const PalabraEnJuego = () => {
                 }
             </div>
 
+            
+
             {
                 juegoPerdido && <LostGame />
             }
 
             {
                 tiempoTerminado && <TimeOver />
+            }
+
+            {
+                enJuego &&  <ReactAudioPlayer
+                                src={ ticktock }
+                                autoPlay
+                                loop
+                            />
+            
             }
 
 

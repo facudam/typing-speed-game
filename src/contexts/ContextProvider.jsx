@@ -24,6 +24,7 @@ export const ContextProvider = ({children}) => {
     const [ currentLevel, setCurrentLevel ] = useState(1)
 
     const [ tiempoTerminado, setTiempoTerminado ] = useState(false)
+    const [ enJuego, setEnJuego ] = useState(true)
 
 
     return(
@@ -49,7 +50,9 @@ export const ContextProvider = ({children}) => {
             currentLevel,
             setCurrentLevel,
             tiempoTerminado,
-            setTiempoTerminado
+            setTiempoTerminado,
+            enJuego,
+            setEnJuego
             }} >{ children }</Context.Provider>
     )
 }
