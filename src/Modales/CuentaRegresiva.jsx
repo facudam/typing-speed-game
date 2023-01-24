@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import '../styles/Modales.css'
+import ReactAudioPlayer from 'react-audio-player';
+import countdown from '../sonidos/321.mp3'
 
 export const CuentaRegresiva = ({ setPalabra }) => {
 
@@ -22,6 +24,8 @@ export const CuentaRegresiva = ({ setPalabra }) => {
             <p className='modal-contador'>
                 { contador }
             </p>
+
+            <ReactAudioPlayer src={ countdown } autoPlay/>
         </div>
     )
 }
