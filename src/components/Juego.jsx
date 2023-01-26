@@ -2,9 +2,9 @@
 import { useContext, useEffect } from 'react';
 import { Context } from '../contexts/Context';
 import { CuentaRegresiva } from '../Modales/CuentaRegresiva';
-import { TiempoAcabado } from '../Modales/TiempoAcabado';
 import '../styles/Juego.css';
 import { PalabraEnJuego } from './PalabraEnJuego';
+import sandCastle from '../sonidos/sandCastle.mp3'
 
 
 
@@ -45,9 +45,20 @@ export const Juego = () => {
             </div>
 
             <div className='en-juego'>
+
+                
+
                 {
                     (!juegoActivado) 
-                        ? <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
+                        ? <div>
+                            <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
+                            <audio 
+                                src={ sandCastle }
+                                autoPlay
+                                loop
+                                
+                            />
+                        </div>
                         : !aparecerPalabra 
                             ? <CuentaRegresiva
                                 setPalabra={ setAparecerPalabra }

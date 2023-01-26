@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { Context } from "../contexts/Context"
 import reloj from '../images/reloj.gif'
 import "../styles/Reloj.css"

@@ -1,5 +1,6 @@
 import { Perdiste } from "../Modales/Perdiste"
 import { PuntosObtenidos } from "../Modales/PuntosObtenidos"
+import failure from "../sonidos/failure.mp3"
 
 export const LostGame = () => {
 
@@ -7,6 +8,7 @@ export const LostGame = () => {
         <>
             <Perdiste />
             <PuntosObtenidos />
+            <audio src={ failure } autoPlay />
         </>
     )
 }

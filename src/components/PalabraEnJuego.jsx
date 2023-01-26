@@ -8,7 +8,6 @@ import '../styles/PalabraEnJuego.css';
 import { Reloj } from "./Reloj";
 import { LostGame } from "./LostGame";
 import { TimeOver } from "./TimeOver";
-import ReactAudioPlayer from 'react-audio-player';
 import ticktock from "../sonidos/ticktock.mp3"
 
 
@@ -111,7 +110,7 @@ export const PalabraEnJuego = () => {
             }
 
             {
-                enJuego &&  <ReactAudioPlayer
+                enJuego &&  <audio
                                 src={ ticktock }
                                 autoPlay
                                 loop

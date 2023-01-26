@@ -1,5 +1,6 @@
 import { PuntosObtenidos } from "../Modales/PuntosObtenidos"
-import { TiempoAcabado } from "../Modales/TiempoAcabado"
+import { TiempoAcabado } from "../Modales/TiempoAcabado";
+import endgame from '../sonidos/endgame.mp3'
 
 export const TimeOver = () => {
 
@@ -7,6 +8,7 @@ export const TimeOver = () => {
         <>
             <TiempoAcabado />
             <PuntosObtenidos />
+            <audio src={ endgame } autoPlay />
         </>
     )
 }
