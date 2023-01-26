@@ -102,4 +102,66 @@
 }
 
 
+/* ++++ muted boton styles ++++++ */
+
+.muted-btn-container {
+    display: flex;
+    width: 100%;
+    max-width: var(--web-max-width);
+    margin: auto;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.muted-btn-container img {
+    width: 45px;
+}
+
+#muted-btn {
+    display: none;
+}
+
+#muted-btn:checked ~ .muted-switch {
+    background-color: rgb(46, 45, 45);
+}
+
+#muted-btn:checked ~ .muted-switch::after {
+    left: 28px;
+    content: "OFF";
+    color: #000;
+}
+
+.muted-switch {
+    display: inline-block;
+    width: 55px;
+    height: 30px;
+    background-color: var(--azul);
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer; 
+    
+}
+
+.muted-switch::after {
+    position: absolute;
+    display: flex;
+    content: "ON";
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    top: 4px;
+    left: 5px;
+    transition: .3s;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    color: var(--azul);
+    text-shadow: 1px 1px 1px rgb(211, 210, 210);
+}
+
+
 

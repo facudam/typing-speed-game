@@ -5,6 +5,7 @@ import { CuentaRegresiva } from '../Modales/CuentaRegresiva';
 import '../styles/Juego.css';
 import { PalabraEnJuego } from './PalabraEnJuego';
 import sandCastle from '../sonidos/sandCastle.mp3'
+import musicImage from '../images/music.svg'
 
 
 
@@ -46,7 +47,11 @@ export const Juego = () => {
 
             <div className='en-juego'>
 
-                
+                <div className='muted-btn-container'>
+                    <img src={ musicImage } alt='Music logo' />
+                    <input type='checkbox' id='muted-btn' />
+                    <label for='muted-btn' className='muted-switch'></label>
+                </div>
 
                 {
                     (!juegoActivado) 
