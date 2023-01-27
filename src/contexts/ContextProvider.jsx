@@ -26,6 +26,8 @@ export const ContextProvider = ({children}) => {
     const [ tiempoTerminado, setTiempoTerminado ] = useState(false)
     const [ enJuego, setEnJuego ] = useState(true)
 
+    const [ musicOn, setMusicOn ] = useState(true)
+
 
     return(
         <Context.Provider value={{
@@ -52,7 +54,9 @@ export const ContextProvider = ({children}) => {
             tiempoTerminado,
             setTiempoTerminado,
             enJuego,
-            setEnJuego
+            setEnJuego,
+            musicOn,
+            setMusicOn
             }} >{ children }</Context.Provider>
     )
 }

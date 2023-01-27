@@ -8,10 +8,14 @@ import sandCastle from '../sonidos/sandCastle.mp3'
 import musicImage from '../images/music.svg'
 
 
-
 export const Juego = () => {
 
-    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, setSegundosActivados } = useContext(Context);
+    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, setSegundosActivados, musicOn, setMusicOn } = useContext(Context);
+
+    const toggleMusic = () => {
+        if (musicOn === true ) { setMusicOn(false) }
+        else { setMusicOn(true) }
+    }
 
     const activar = (e) => {
         if((e).key == 'Enter') { 
@@ -31,7 +35,6 @@ export const Juego = () => {
 
     }, [])
 
-
     
     return(
         <div className='juego-iniciado'>
@@ -49,20 +52,21 @@ export const Juego = () => {
 
                 <div className='muted-btn-container'>
                     <img src={ musicImage } alt='Music logo' />
-                    <input type='checkbox' id='muted-btn' />
-                    <label for='muted-btn' className='muted-switch'></label>
+                    <input type='checkbox' id='muted-btn'
+                        onInput={() => toggleMusic()}
+                     />
+                    <label htmlFor='muted-btn' className='muted-switch'></label>
                 </div>
 
                 {
                     (!juegoActivado) 
                         ? <div>
                             <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
-                            <audio 
-                                src={ sandCastle }
-                                autoPlay
-                                loop
-                                
-                            />
+
+                            {
+                                musicOn && <audio className='audio' src={ sandCastle } autoPlay loop />
+                            }
+                            
                         </div>
                         : !aparecerPalabra 
                             ? <CuentaRegresiva

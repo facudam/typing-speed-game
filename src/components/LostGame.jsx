@@ -1,14 +1,22 @@
+import { useContext } from "react"
+import { Context } from "../contexts/Context"
 import { Perdiste } from "../Modales/Perdiste"
 import { PuntosObtenidos } from "../Modales/PuntosObtenidos"
 import failure from "../sonidos/failure.mp3"
 
 export const LostGame = () => {
 
+    const { musicOn } = useContext(Context)
+
     return(
         <>
             <Perdiste />
             <PuntosObtenidos />
-            <audio src={ failure } autoPlay />
+
+            {
+                musicOn && <audio className="audio" src={ failure } autoPlay />
+            }
+            
         </>
     )
 }

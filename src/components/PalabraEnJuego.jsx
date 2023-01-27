@@ -14,7 +14,7 @@ import ticktock from "../sonidos/ticktock.mp3"
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn } = useContext(Context)
     
     
 
@@ -110,11 +110,7 @@ export const PalabraEnJuego = () => {
             }
 
             {
-                enJuego &&  <audio
-                                src={ ticktock }
-                                autoPlay
-                                loop
-                            />
+                (enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />
             
             }
 

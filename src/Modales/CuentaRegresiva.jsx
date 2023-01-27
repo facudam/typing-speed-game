@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Context } from '../contexts/Context'
 import countdown from '../sonidos/321.mp3'
 import '../styles/Modales.css'
 
 
 export const CuentaRegresiva = ({ setPalabra }) => {
+
+    const { musicOn } = useContext(Context)
 
     const [ contador, setContador ] = useState(3)
 
@@ -25,7 +28,11 @@ export const CuentaRegresiva = ({ setPalabra }) => {
                 { contador }
             </p>
 
-            <audio src={ countdown } autoPlay/>
+            {
+                musicOn && <audio src={ countdown } autoPlay/>
+            }
+
+            
         </div>
     )
 }
