@@ -47,7 +47,7 @@ export const PalabraEnJuego = () => {
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
     
-    if(palabraRandom.length === palabraTipeada.length) {
+    if(palabraTipeada.length >= palabraRandom.length) {
         if(palabraRandom === palabraTipeada) {
             setPuntaje(puntaje + 10)
             setPalabraTipeada('')
@@ -110,7 +110,7 @@ export const PalabraEnJuego = () => {
             }
 
             {
-                (enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />
+                ( enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />
             
             }
 

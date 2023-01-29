@@ -37,7 +37,9 @@ export const Juego = () => {
 
     
     return(
+        
         <div className='juego-iniciado'>
+             {/*Crear un componente para ésto:*/}
             <div className='juego-iniciado__reglas__slider'>
                 <div className='reglas-container'>
                     <p className='regla'>El juego consiste en tipear todas las palabras que irán apereciendo en pantalla antes de que el tiempo se agote.</p>
