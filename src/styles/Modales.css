@@ -103,18 +103,21 @@
 
 .tiempo-acabado {
     margin-top: -40px;
-    width: 90%;
-    max-width: 430px;
-    background-color: rgb(2, 125, 2);
-    margin: auto;
-    padding: 20px;
-    border-radius: 5px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
     animation: mensajeAnimado 1s ease forwards;
+    
 }
 
 .tiempo-acabado p {
-    color: #fff;
-    text-align: center;
-    font-size: 1.3rem;
+    background-color: rgb(16, 157, 37);
+    width: 90%;
+    max-width: 430px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    
 }
 

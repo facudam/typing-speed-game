@@ -22,13 +22,14 @@ export const Reloj = () => {
             setSegundosActivados(false)
             clearInterval(intervaloDeJuego)
             setTimeout(()=> {
+
+                setAparecerPalabra(false)
+                setSegundos(9)
                 setEnJuego(true)
                 setTiempoTerminado(false)
                 setPuntaje(0)
                 setPalabraTipeada('')
                 setJuegoActivado(false)
-                setAparecerPalabra(false)
-                setSegundos(9)
                 setJuegoPerdido(false)
                            
                    

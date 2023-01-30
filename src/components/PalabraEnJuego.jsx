@@ -14,7 +14,7 @@ import ticktock from "../sonidos/ticktock.mp3"
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn } = useContext(Context)
     
     
 
@@ -46,32 +46,35 @@ export const PalabraEnJuego = () => {
    const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]);
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
-    
-    if(palabraTipeada.length >= palabraRandom.length) {
-        if(palabraRandom === palabraTipeada) {
-            setPuntaje(puntaje + 10)
-            setPalabraTipeada('')
-            
-        } else {
-            setEnJuego(false)
-            setJuegoPerdido(true)
-            setSegundosActivados(false)
-            
-            setTimeout(()=> {
-                setEnJuego(true)
-                setPuntaje(0)
+    const compararPalabras = () => {
+        if(palabraTipeada.length >= palabraRandom.length) {
+            if(palabraRandom.toUpperCase() === palabraTipeada.toUpperCase()) {
+                setPuntaje(puntaje + 10)
                 setPalabraTipeada('')
-                setJuegoActivado(false)
-                setAparecerPalabra(false)
-                setSegundos(9)
-                setJuegoPerdido(false)
+            
+            } else {
+                setSegundos(1000)
+                console.log(segundos)
+                setEnJuego(false)
+                setJuegoPerdido(true)
+                setSegundosActivados(false)
                 
+                setTimeout(()=> {
+                    setSegundos(9)
+                    setEnJuego(true)
+                    setPuntaje(0)
+                    setPalabraTipeada('')
+                    setJuegoActivado(false)
+                    setAparecerPalabra(false)
+                    setJuegoPerdido(false)  
             }, 5000)
-    
 
+            }  
         }
-        
-    } 
+    }
+
+
+    (!tiempoTerminado && !juegoPerdido) && compararPalabras() 
     
 
     return(
@@ -88,8 +91,8 @@ export const PalabraEnJuego = () => {
                 }
             </div>
             <div className="tipeo-container">
-                {
-                    letrasDePalabra.map((letra, index) => (
+                {   //En caso de perder o que se acabe el tiempo que desaparezca el tipeo-container.
+                    (!tiempoTerminado && !juegoPerdido) && letrasDePalabra.map((letra, index) => (
                         <div
                             key={ index } 
                             className="tipeo-container__letra"> 
@@ -112,10 +115,7 @@ export const PalabraEnJuego = () => {
             {
                 ( enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />
             
-            }
-
-
-            
+            }   
             
         </>
         
