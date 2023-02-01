@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useContext } from "react";
 import { Context } from "../contexts/Context";
-import { LetraDePalabra } from "./LetraDePalabra";
 import { palabrasDeNivel1 } from "../PALABRAS/nivel1";
 import { palabrasDeNivel2 } from "../PALABRAS/nivel2";
 import { getRandomWord } from "../helpers/getRandomWord";
@@ -9,15 +8,15 @@ import { Reloj } from "./Reloj";
 import { LostGame } from "./LostGame";
 import { TimeOver } from "./TimeOver";
 import ticktock from "../sonidos/ticktock.mp3"
+import { PalabraContainer } from "./PalabraContainer";
+import { TipeoContainer } from "./TipeoContainer";
 
 
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, levelStage, acierto, setAcierto } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, levelStage, acierto, setAcierto } = useContext(Context)
     
-    
-
     
    useEffect(() => {
      window.addEventListener('keydown', handleKeydown)
@@ -45,7 +44,9 @@ export const PalabraEnJuego = () => {
 
    let palabraRandom;
 
-   (levelStage <= 3) ? palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]) : palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel2), [ puntaje ]);
+   (levelStage <= 3) 
+        ? palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]) 
+        : palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel2), [ puntaje ]);
 
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
@@ -56,8 +57,6 @@ export const PalabraEnJuego = () => {
                 setPalabraTipeada('')
             
             } else {
-                setSegundos(1000)
-                console.log(segundos)
                 setEnJuego(false)
                 setJuegoPerdido(true)
                 setSegundosActivados(false)
@@ -83,36 +82,17 @@ export const PalabraEnJuego = () => {
     return(
         <>
             <Reloj />
-            <div className="palabra-container">
-                {
-                    letrasDePalabra.map(letra => (
-                        <LetraDePalabra 
-                            letra={ letra }
-                            key={ Math.random() * 1000000 }
-                        />
-                    ))
-                }
-            </div>
-            <div className="tipeo-container">
-                {   //En caso de perder o que se acabe el tiempo que desaparezca el tipeo-container.
-                    (!tiempoTerminado && !juegoPerdido) && letrasDePalabra.map((letra, index) => (
-                        <div
-                            key={ index } 
-                            className="tipeo-container__letra"> 
-                            { palabraTipeada.charAt(index).toUpperCase() } 
-                        </div>
-                    ))
-                }
-            </div>
 
+            <PalabraContainer letrasDePalabra={ letrasDePalabra } />
             
+            <TipeoContainer palabraTipeada={ palabraTipeada } letrasDePalabra={ letrasDePalabra } />
 
             {
                 juegoPerdido && <LostGame />
             }
 
             {
-                tiempoTerminado && <TimeOver />
+                (tiempoTerminado && !juegoPerdido) && <TimeOver />
             }
 
             {
