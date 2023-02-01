@@ -20,8 +20,12 @@ export const ContextProvider = ({children}) => {
     // ++++ Estados para el tiempo de juego y para niveles ++++ //
     const [ segundosActivados, setSegundosActivados ] = useState(true)
     const [ segundos, setSegundos ] = useState(9)
-    const [ nivel, setNivel ] = useState(1)
+    
     const [ currentLevel, setCurrentLevel ] = useState(1)
+    const [ levelStage, setLevelStage ] = useState(1)
+
+    // +++++++ Estado para los aciertos ++++++ //
+    const [ acierto, setAcierto ] = useState(0)
 
     const [ tiempoTerminado, setTiempoTerminado ] = useState(false)
     const [ enJuego, setEnJuego ] = useState(true)
@@ -56,7 +60,11 @@ export const ContextProvider = ({children}) => {
             enJuego,
             setEnJuego,
             musicOn,
-            setMusicOn
+            setMusicOn,
+            levelStage,
+            setLevelStage,
+            acierto, 
+            setAcierto
             }} >{ children }</Context.Provider>
     )
 }

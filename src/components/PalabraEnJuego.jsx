@@ -14,7 +14,7 @@ import ticktock from "../sonidos/ticktock.mp3"
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, levelStage, acierto, setAcierto } = useContext(Context)
     
     
 
@@ -41,9 +41,12 @@ export const PalabraEnJuego = () => {
       }
 
     
-   // Guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
-   
-   const palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]);
+   // Si el levelStage es menor 0 igual a 3, inicializamos las palabras de nivel 1. Sino, accedemos a las palabras de nivel 2. Una vez ya accedida la lista de palabras, guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
+
+   let palabraRandom;
+
+   (levelStage <= 3) ? palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]) : palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel2), [ puntaje ]);
+
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
     const compararPalabras = () => {
