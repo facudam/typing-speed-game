@@ -12,6 +12,6 @@ export const PalabraContainer = ( { letrasDePalabra } ) => {
                         />
                     ))
                 }
-            </div>
+        </div>
     )
 }

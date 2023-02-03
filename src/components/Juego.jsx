@@ -6,6 +6,7 @@ import '../styles/Juego.css';
 import { PalabraEnJuego } from './PalabraEnJuego';
 import sandCastle from '../sonidos/sandCastle.mp3'
 import musicImage from '../images/music.svg'
+import { NivelSuperado } from '../Modales/NivelSuperado';
 
 
 export const Juego = () => {
@@ -76,6 +77,8 @@ export const Juego = () => {
                               /> 
                             : <PalabraEnJuego  />
                 }
+
+                <NivelSuperado />
 
             </div>
             

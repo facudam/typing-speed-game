@@ -13,6 +13,7 @@ import { TipeoContainer } from "./TipeoContainer";
 
 
 
+
 export const PalabraEnJuego = () => {
 
     const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, levelStage, acierto, setAcierto } = useContext(Context)
@@ -81,6 +82,7 @@ export const PalabraEnJuego = () => {
 
     return(
         <>
+
             <Reloj />
 
             <PalabraContainer letrasDePalabra={ letrasDePalabra } />
@@ -98,7 +100,9 @@ export const PalabraEnJuego = () => {
             {
                 ( enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />
             
-            }   
+            } 
+
+            
             
         </>
         
