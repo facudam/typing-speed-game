@@ -12,11 +12,9 @@ import { PalabraContainer } from "./PalabraContainer";
 import { TipeoContainer } from "./TipeoContainer";
 
 
-
-
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, levelStage, acierto, setAcierto } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, levelStage, acierto, setAcierto } = useContext(Context)
     
     
    useEffect(() => {
@@ -41,7 +39,8 @@ export const PalabraEnJuego = () => {
       }
 
     
-   // Si el levelStage es menor 0 igual a 3, inicializamos las palabras de nivel 1. Sino, accedemos a las palabras de nivel 2. Una vez ya accedida la lista de palabras, guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
+   // Si el levelStage es menor 0 igual a 3, inicializamos las palabras de nivel 1. Sino, accedemos a las palabras de nivel 2. 
+   // Una vez ya accedida la lista de palabras, guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
 
    let palabraRandom;
 
@@ -64,10 +63,10 @@ export const PalabraEnJuego = () => {
                 
                 setTimeout(()=> {
                     setSegundos(9)
+                    setJuegoActivado(false)
                     setEnJuego(true)
                     setPuntaje(0)
                     setPalabraTipeada('')
-                    setJuegoActivado(false)
                     setAparecerPalabra(false)
                     setJuegoPerdido(false)  
             }, 5000)
@@ -83,7 +82,9 @@ export const PalabraEnJuego = () => {
     return(
         <>
 
-            <Reloj />
+            { 
+                segundosActivados && <Reloj /> 
+            }
 
             <PalabraContainer letrasDePalabra={ letrasDePalabra } />
             
@@ -101,8 +102,6 @@ export const PalabraEnJuego = () => {
                 ( enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />
             
             } 
-
-            
             
         </>
         

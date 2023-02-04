@@ -8,8 +8,6 @@ export const Reloj = () => {
 
     const { segundos, setSegundos, setAparecerPalabra, setPalabraTipeada, setJuegoActivado, segundosActivados, setSegundosActivados, setPuntaje, setTiempoTerminado, setEnJuego } = useContext(Context);
 
-    if(!segundosActivados) return;
-
     const tiempoDeJuego = () => {
 
         if (segundos > 1) {

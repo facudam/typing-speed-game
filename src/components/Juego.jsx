@@ -20,9 +20,7 @@ export const Juego = () => {
     }
 
     const activar = (e) => {
-        ((e).key == 'Enter')  
-            ? setJuegoActivado(true)
-            : setSegundosActivados(true) 
+        ((e).key == 'Enter') && setJuegoActivado(true)       
     }
 
     useEffect(() => {
@@ -39,9 +37,13 @@ export const Juego = () => {
     return(
         
         <div className='juego-iniciado'>
+
             <SliderRules />
+
             <div className='en-juego'>
+
                 <MusicButton toggleMusic={ toggleMusic }/>
+
                 {
                     (!juegoActivado) 
                         ? <div>
@@ -59,7 +61,9 @@ export const Juego = () => {
                               /> 
                             : <PalabraEnJuego  />
                 }
-            </div>  
+
+            </div>
+
         </div>
     )
 } 

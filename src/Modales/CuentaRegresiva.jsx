@@ -6,7 +6,7 @@ import '../styles/Modales.css'
 
 export const CuentaRegresiva = ({ setPalabra }) => {
 
-    const { musicOn } = useContext(Context)
+    const { musicOn, setSegundosActivados } = useContext(Context)
 
     const [ contador, setContador ] = useState(3)
 
@@ -16,6 +16,7 @@ export const CuentaRegresiva = ({ setPalabra }) => {
         } else {
             clearInterval(intervalo)
             setPalabra(true)
+            setSegundosActivados(true)
         }
         
     }
