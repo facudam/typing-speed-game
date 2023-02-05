@@ -14,7 +14,7 @@ export const TimeOver = () => {
             <PuntosObtenidos />
 
             {
-                musicOn && <audio className="audio" src={ endgame } autoPlay />
+                musicOn && <audio src={ endgame } autoPlay />
             }
 
             

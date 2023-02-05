@@ -10,7 +10,7 @@ import { TimeOver } from "./TimeOver";
 import ticktock from "../sonidos/ticktock.mp3"
 import { PalabraContainer } from "./PalabraContainer";
 import { TipeoContainer } from "./TipeoContainer";
-import { NivelSuperado } from "../Modales/NivelSuperado"
+import { YouWin } from "./YouWin";
 
 
 export const PalabraEnJuego = () => {
@@ -112,7 +112,7 @@ export const PalabraEnJuego = () => {
             }
 
             {
-                levelPassed && <NivelSuperado />
+                levelPassed && <YouWin />
             }
             
         </>

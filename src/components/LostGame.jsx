@@ -14,7 +14,7 @@ export const LostGame = () => {
             <PuntosObtenidos />
 
             {
-                musicOn && <audio className="audio" src={ failure } autoPlay />
+                musicOn && <audio src={ failure } autoPlay />
             }
             
         </>
