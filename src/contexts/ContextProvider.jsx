@@ -29,7 +29,7 @@ export const ContextProvider = ({children}) => {
     const [ aciertosRequeridos, setAciertosRequeridos ] = useState(2)
 
     const [ tiempoTerminado, setTiempoTerminado ] = useState(false)
-    const [ enJuego, setEnJuego ] = useState(true)
+    const [ enJuego, setEnJuego ] = useState(true) // Para activar el audio ticktock
 
     const [ musicOn, setMusicOn ] = useState(true)
     const [ levelPassed, setLevelPassed ] = useState(false)
@@ -39,18 +39,18 @@ export const ContextProvider = ({children}) => {
             setLevelPassed(true)
             setEnJuego(false)
             setSegundosActivados(false)
-                
+                  
                 setTimeout(()=> {
+                    setJuegoActivado(true)
                     setSegundos(9)
-                    setJuegoActivado(false)
+                    setAparecerPalabra(false)
                     setEnJuego(true)
                     setPalabraTipeada('')
-                    setAparecerPalabra(false)
                     setLevelPassed(false)
                     setCurrentLevel( currentLevel + 1)
                     setLevelPassed(false)
                     setAciertos(0)
-                    setJuegoActivado(true)
+                    
             }, 5000)
         }
  }

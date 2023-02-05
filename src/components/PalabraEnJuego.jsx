@@ -45,7 +45,7 @@ export const PalabraEnJuego = () => {
 
    let palabraRandom;
 
-   (currentLevel <= 3) 
+   (currentLevel <= 5) 
         ? palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]) 
         : palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel2), [ puntaje ]);
 
