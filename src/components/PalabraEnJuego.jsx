@@ -10,11 +10,12 @@ import { TimeOver } from "./TimeOver";
 import ticktock from "../sonidos/ticktock.mp3"
 import { PalabraContainer } from "./PalabraContainer";
 import { TipeoContainer } from "./TipeoContainer";
+import { NivelSuperado } from "../Modales/NivelSuperado"
 
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, levelStage, acierto, setAcierto } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, currentLevel, setCurrentLevel, aciertos, setAciertos, levelPassed, verificarAciertos} = useContext(Context)
     
     
    useEffect(() => {
@@ -39,22 +40,28 @@ export const PalabraEnJuego = () => {
       }
 
     
-   // Si el levelStage es menor 0 igual a 3, inicializamos las palabras de nivel 1. Sino, accedemos a las palabras de nivel 2. 
+   // Si el currentLevel es menor 0 igual a 3, inicializamos las palabras de nivel 1. Sino, accedemos a las palabras de nivel 2. 
    // Una vez ya accedida la lista de palabras, guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
 
    let palabraRandom;
 
-   (levelStage <= 3) 
+   (currentLevel <= 3) 
         ? palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]) 
         : palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel2), [ puntaje ]);
 
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
+
+   
+ 
 
     const compararPalabras = () => {
         if(palabraTipeada.length >= palabraRandom.length) {
             if(palabraRandom.toUpperCase() === palabraTipeada.toUpperCase()) {
                 setPuntaje(puntaje + 10)
                 setPalabraTipeada('')
+                setAciertos(aciertos + 1)
+                
+                verificarAciertos()
             
             } else {
                 setEnJuego(false)
@@ -68,7 +75,9 @@ export const PalabraEnJuego = () => {
                     setPuntaje(0)
                     setPalabraTipeada('')
                     setAparecerPalabra(false)
-                    setJuegoPerdido(false)  
+                    setJuegoPerdido(false)
+                    setAciertos(0) 
+                    setCurrentLevel(1)
             }, 5000)
 
             }  
@@ -76,9 +85,9 @@ export const PalabraEnJuego = () => {
     }
 
 
-    (!tiempoTerminado && !juegoPerdido) && compararPalabras() 
-    
+    (!tiempoTerminado && !juegoPerdido && !levelPassed) && compararPalabras() 
 
+    
     return(
         <>
 
@@ -91,17 +100,20 @@ export const PalabraEnJuego = () => {
             <TipeoContainer palabraTipeada={ palabraTipeada } letrasDePalabra={ letrasDePalabra } />
 
             {
-                juegoPerdido && <LostGame />
+                juegoPerdido && <LostGame />       
             }
 
             {
-                (tiempoTerminado && !juegoPerdido) && <TimeOver />
+                (tiempoTerminado && !juegoPerdido && !levelPassed) && <TimeOver />
             }
 
             {
-                ( enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />
-            
-            } 
+                ( enJuego && musicOn ) &&  <audio src={ ticktock } autoPlay loop />       
+            }
+
+            {
+                levelPassed && <NivelSuperado />
+            }
             
         </>
         

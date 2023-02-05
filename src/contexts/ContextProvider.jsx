@@ -25,13 +25,35 @@ export const ContextProvider = ({children}) => {
     const [ levelStage, setLevelStage ] = useState(1)
 
     // +++++++ Estado para los aciertos ++++++ //
-    const [ acierto, setAcierto ] = useState(0)
+    const [ aciertos, setAciertos ] = useState(0)
+    const [ aciertosRequeridos, setAciertosRequeridos ] = useState(2)
 
     const [ tiempoTerminado, setTiempoTerminado ] = useState(false)
     const [ enJuego, setEnJuego ] = useState(true)
 
     const [ musicOn, setMusicOn ] = useState(true)
+    const [ levelPassed, setLevelPassed ] = useState(false)
 
+    const verificarAciertos = () => {
+        if (aciertosRequeridos === aciertos) {
+            setLevelPassed(true)
+            setEnJuego(false)
+            setSegundosActivados(false)
+                
+                setTimeout(()=> {
+                    setSegundos(9)
+                    setJuegoActivado(false)
+                    setEnJuego(true)
+                    setPalabraTipeada('')
+                    setAparecerPalabra(false)
+                    setLevelPassed(false)
+                    setCurrentLevel( currentLevel + 1)
+                    setLevelPassed(false)
+                    setAciertos(0)
+                    setJuegoActivado(true)
+            }, 5000)
+        }
+ }
 
     return(
         <Context.Provider value={{
@@ -63,8 +85,13 @@ export const ContextProvider = ({children}) => {
             setMusicOn,
             levelStage,
             setLevelStage,
-            acierto, 
-            setAcierto
+            aciertos, 
+            setAciertos,
+            levelPassed,
+            setLevelPassed,
+            aciertosRequeridos,
+            setAciertosRequeridos,
+            verificarAciertos
             }} >{ children }</Context.Provider>
     )
 }

@@ -11,7 +11,7 @@ import { MusicButton } from './MusicButton';
 
 export const Juego = () => {
 
-    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, setSegundosActivados, musicOn, setMusicOn } = useContext(Context);
+    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, musicOn, setMusicOn, currentLevel } = useContext(Context);
 
     const toggleMusic = () => {
         musicOn 
@@ -19,16 +19,16 @@ export const Juego = () => {
             : setMusicOn(true) 
     }
 
-    const activar = (e) => {
+    const activarJuego = (e) => {
         ((e).key == 'Enter') && setJuegoActivado(true)       
     }
 
     useEffect(() => {
       
-    document.addEventListener('keydown', activar)
+    document.addEventListener('keydown', activarJuego)
 
     return () => {
-        document.removeEventListener('keydown', activar)
+        document.removeEventListener('keydown', activarJuego)
     }
 
     }, [])
@@ -43,6 +43,10 @@ export const Juego = () => {
             <div className='en-juego'>
 
                 <MusicButton toggleMusic={ toggleMusic }/>
+                {
+                    aparecerPalabra && <h2>Nivel: { currentLevel }</h2>
+                }
+                
 
                 {
                     (!juegoActivado) 
