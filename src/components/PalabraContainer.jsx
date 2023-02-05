@@ -1,7 +1,14 @@
+import { useContext } from "react"
+import { Context } from "../contexts/Context"
 import { LetraDePalabra } from "./LetraDePalabra"
 
 
 export const PalabraContainer = ( { letrasDePalabra } ) => {
+
+    const { levelPassed } = useContext(Context)
+
+    if (levelPassed) return;
+
     return(
         <div className="palabra-container">
                 {

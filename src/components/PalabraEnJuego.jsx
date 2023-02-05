@@ -15,7 +15,7 @@ import { NivelSuperado } from "../Modales/NivelSuperado"
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, currentLevel, setCurrentLevel, aciertos, setAciertos, levelPassed, verificarAciertos} = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, currentLevel, setCurrentLevel, aciertos, setAciertos, levelPassed, verificarAciertos } = useContext(Context)
     
     
    useEffect(() => {
