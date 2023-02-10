@@ -15,11 +15,12 @@ import { YouWin } from "./YouWin";
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, setSegundos, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, currentLevel, setCurrentLevel, aciertos, setAciertos, levelPassed, verificarAciertos } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, currentLevel, setCurrentLevel, aciertos, setAciertos, levelPassed, verificarAciertos,changeLevelRequirements } = useContext(Context)
     
     
    useEffect(() => {
      window.addEventListener('keydown', handleKeydown)
+     
 
      return () => {
         window.removeEventListener('keydown', handleKeydown)
@@ -32,7 +33,16 @@ export const PalabraEnJuego = () => {
             setMejorPuntaje(puntaje)
             localStorage.setItem('mejorPuntaje', puntaje ?? 0)
         }
-   }, [puntaje])
+
+   }, [ puntaje ])
+
+  
+  useEffect(() => {
+    changeLevelRequirements()
+    console.log('changeTimed active')
+  }, [ currentLevel ])
+    
+ 
 
     const handleKeydown = (e) => {     
         const letraApretada = e.key;
@@ -45,14 +55,13 @@ export const PalabraEnJuego = () => {
 
    let palabraRandom;
 
-   (currentLevel <= 5) 
-        ? palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje ]) 
-        : palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel2), [ puntaje ]);
+   (currentLevel <= 4) 
+        ? palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel1), [ puntaje, currentLevel]) 
+        : palabraRandom = useMemo(() => getRandomWord(palabrasDeNivel2), [ puntaje, currentLevel ]);
 
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
    
- 
 
     const compararPalabras = () => {
         if(palabraTipeada.length >= palabraRandom.length) {
@@ -69,7 +78,7 @@ export const PalabraEnJuego = () => {
                 setSegundosActivados(false)
                 
                 setTimeout(()=> {
-                    setSegundos(9)
+                    setCurrentLevel(1)
                     setJuegoActivado(false)
                     setEnJuego(true)
                     setPuntaje(0)
@@ -77,26 +86,25 @@ export const PalabraEnJuego = () => {
                     setAparecerPalabra(false)
                     setJuegoPerdido(false)
                     setAciertos(0) 
-                    setCurrentLevel(1)
+                    
             }, 5000)
 
             }  
         }
     }
 
-
-    (!tiempoTerminado && !juegoPerdido && !levelPassed) && compararPalabras() 
+    
+    (!tiempoTerminado && !juegoPerdido && !levelPassed) && compararPalabras()
+    
 
     
     return(
         <>
-
             { 
                 segundosActivados && <Reloj /> 
             }
 
-            <PalabraContainer letrasDePalabra={ letrasDePalabra } />
-            
+            <PalabraContainer letrasDePalabra={ letrasDePalabra } />  
             <TipeoContainer palabraTipeada={ palabraTipeada } letrasDePalabra={ letrasDePalabra } />
 
             {
