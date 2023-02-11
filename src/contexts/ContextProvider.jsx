@@ -43,28 +43,28 @@ export const ContextProvider = ({children}) => {
                 setAciertosRequeridos(0)
                 break;
             case 2:
-                setSegundos(100)
-                setAciertosRequeridos(0)
+                setSegundos(10)
+                setAciertosRequeridos(1)
                 break;
             case 3:
-                setSegundos(25)
-                setAciertosRequeridos(0)
+                setSegundos(10)
+                setAciertosRequeridos(2)
                 break;
             case 4:
-                setSegundos(20)
-                setAciertosRequeridos(0)
+                setSegundos(8)
+                setAciertosRequeridos(2)
                 break;
             case 5:
-                setSegundos(21)
-                setAciertosRequeridos(0)
+                setSegundos(10)
+                setAciertosRequeridos(2)
                 break;
             case 6:
-                setSegundos(22)
-                setAciertosRequeridos(0)
+                setSegundos(9)
+                setAciertosRequeridos(3)
                 break;
             case 7:
-                setSegundos(23)
-                setAciertosRequeridos(0)
+                setSegundos(8)
+                setAciertosRequeridos(3)
             default:
                 setSegundos(100)
                 setAciertosRequeridos(100)
