@@ -4,20 +4,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px 10px;
-    margin-top: 50px;
+    padding: 50px;
+    margin-top: 10px;
     border-radius: 5px 10px;
-    /*box-shadow: 0 4px 3px #b8b8b8,
-    -2px 0 3px #e7e7e7,
-    0 -2px 3px #fdfdfd,
-    2px 0 3px #d7d7d7;*/
+    cursor: url(../images/finger.svg), auto;
+   
 }
+
 
 .teclas-container {
     display: flex;
     padding: 5px;
     font-family: sans-serif;
     gap: 5px;
+    
 }
 
 .teclas-container__letra {
@@ -25,7 +25,7 @@
     border-radius: 5px;
     padding: 5px 5px 8px;
     font-family: 'Bebas Neue', cursive;
-    transition: all .3s;
+    transition: all .2s;
 }
 
 .teclas-container__letra:hover {
@@ -40,7 +40,7 @@
     text-transform: capitalize;
     display: inherit;
     padding: 6px 8px;
-    cursor: pointer;
+    cursor: url(../images/finger-pressed.svg), auto;
     background: linear-gradient(140deg, #fdfdfd, #f7f4f4);
     box-shadow: 
          0 4px 3px #b8b8b8,
@@ -48,7 +48,7 @@
          0 -2px 3px #fdfdfd,
          2px 0 3px #d7d7d7;
     border-radius: 5px;
-    transition: all .3s;
+    transition: all .2s;
 }
 
 .letra-title:hover {

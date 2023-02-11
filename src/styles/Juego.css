@@ -107,10 +107,11 @@
 .p-enter-press {
     margin-top: 25px;
     color: rgb(37, 173, 222);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-align: center;
     text-shadow: 1px 1px 1px #000;
     animation: latido 1s ease infinite;
+    
 }
 
 @keyframes latido {
