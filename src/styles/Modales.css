@@ -127,7 +127,7 @@
     width: 95%;
     max-width: 350px;
     margin: auto;
-    padding: 25px;
+    padding: 5px;
     overflow: hidden;
     position: absolute;
     top: 50%;
@@ -137,75 +137,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: aparicion 2s ease;
-    background-color: var(--azul);
-    border-radius: 5%;
+    animation: aparicion .5s ease;
+    overflow: hidden;
 }
 
 .congrats {
     text-align: center;
     font-size: 1.9rem;
     font-weight: bold;
-    margin-bottom: -27px;
-    animation: name duration timing-function delay iteration-count direction fill-mode;
-    animation: congrats 5s ease-in-out forwards;
-    
+    color: var(--azul);
+    text-shadow: 1px 1px 1px #000;
 }
 
 .nivel-superado img {
-    width: 300px;
-    margin-top: -20px;
-    border-radius: 5%;
-}
-
-.lets-continue {
-    margin-top: 10px;
-    font-size: 1.5rem;
-    animation: continue 5s ease forwards;
-    color: #fff;
-}
-
-@keyframes congrats {
-    0% {
-        
-        transform: translateY(-400%);
-    }
-    35% {
-        transform: translateY(-400%);
-    }
-    40% {
-        transform: translateY(0%);
-    }
-    44% {
-        transform: translateY(-10px);
-    }
-    47%{
-        transform: translateY(0px);
-    }
-    49% {
-        transform: translateY(-10px);
-    }
-    53% {
-        transform: translateY(0px);
-    } 
+    width: 200px;
+    filter: drop-shadow(2px 2px 2px rgb(21, 21, 20));
     
 }
 
 
-@keyframes continue {
-    0% {
-        transform: translateX(-200%);
-    }
-    60% {
-        transform: translateX(-200%);
-    }
-    70% {
-        transform: translateX(0%);
-    }
-    87% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(200%);
-    }
-}

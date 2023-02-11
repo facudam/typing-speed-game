@@ -1,12 +1,12 @@
 import '../styles/Modales.css'
+import trofeo from '../images/trofeo.svg'
 
 export const NivelSuperado = () => {
 
     return(
         <div className="nivel-superado">
-            <p className='congrats'>¡Bien hecho!</p>
-            <img src="https://i.giphy.com/media/l0MYKDrj6SXHz8YYU/giphy.webp" alt="hombre felicitando" />
-            <p className='lets-continue'>¡Vayamos al siguiente nivel!</p>
+            <p className='congrats'>¡Excelente, pasaste de nivel!</p>
+            <img src={ trofeo } alt='trofeo, premio'/>
         </div>
     )
     
