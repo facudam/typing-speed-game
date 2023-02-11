@@ -9,11 +9,11 @@ export const SectionInvitarJuego = () => {
     return (
         <section className="Section-invitar-juego-container">
             <h2>Pon a prueba tus habilidades</h2>
-            <p>Haz click en 'JUGAR' y apresúrate a tipear para ganar</p>
+            <p>Haz click en 'Ir a juego' y apresúrate a tipear para ganar</p>
             <button
                 onClick={ () => setJuegoIniciado(true)}
                 >
-                JUGAR
+                Ir a Juego
             </button>
         </section>
     )

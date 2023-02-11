@@ -8,7 +8,6 @@ import '../styles/Header.css'
 
 export const Header = () => {
 
-    const { juegoIniciado } = useContext(Context);
     return(
      <>
         <header>

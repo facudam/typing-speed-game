@@ -7,6 +7,7 @@ import { PalabraEnJuego } from './PalabraEnJuego';
 import sandCastle from '../sonidos/sandCastle.mp3'
 import { SliderRules } from './SliderRules';
 import { MusicButton } from './MusicButton';
+import { TecladoTitle } from './TecladoTitle';
 
 
 export const Juego = () => {
@@ -54,11 +55,15 @@ export const Juego = () => {
                 {
                     (!juegoActivado) 
                         ? <div>
-                            <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
+                                <p className='p-enter-press'>Presiona 'Enter' para comenzar</p>
 
-                            {
-                                musicOn && <audio className='audio' src={ sandCastle } autoPlay loop />
-                            }
+                                {
+                                    musicOn && <audio className='audio' src={ sandCastle } autoPlay loop />
+                                }
+
+                                <div className='fondo-empezar-juego'>
+                                   <TecladoTitle />
+                                </div>
                             
                           </div>
 

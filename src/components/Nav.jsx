@@ -7,7 +7,7 @@ export const Nav = () => {
     return(
         <div className='main-container-menu'>
             <div className="header__menu">
-                <span>Typing Speed Game</span>
+                <span><a href='http://localhost:3000/'>Typing Speed Game</a></span>
                 <nav>
                     <ul>
                         <li>Puntaje: { puntaje } pts.</li>

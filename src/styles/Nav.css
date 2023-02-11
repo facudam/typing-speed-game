@@ -16,6 +16,11 @@
     padding: 15px;
 }
 
+.header__menu span a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .header__menu nav ul{
     display: flex;
     list-style: none;

@@ -1,0 +1,44 @@
+
+.teclado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    
+    border-radius: 5px 10px;
+    box-shadow: 0 4px 3px #b8b8b8,
+    -2px 0 3px #e7e7e7,
+    0 -2px 3px #fdfdfd,
+    2px 0 3px #d7d7d7;
+}
+
+.teclas-container {
+    display: flex;
+    padding: 2px;
+    font-family: sans-serif;
+    
+}
+
+.teclas-container__letra {
+    background-color: #706b6b;
+    border-radius: 5px;
+    padding: 5px 5px 8px;
+}
+
+.letra-title {
+    width: 65px;
+    height: 45px;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    display: inherit;
+    padding: 2px 3px;
+    
+    background: linear-gradient(140deg, #fdfdfd, #f7f4f4);
+    box-shadow: 
+         0 4px 3px #b8b8b8,
+         -2px 0 3px #e7e7e7,
+         0 -2px 3px #fdfdfd,
+         2px 0 3px #d7d7d7;
+    border-radius: 5px;
+}

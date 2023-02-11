@@ -1,6 +1,6 @@
 
 .Section-invitar-juego-container {
-    padding-top: var(--padding-for-containers);
+    padding: var(--padding-for-containers);
     text-align: center;
     
 }
@@ -25,4 +25,5 @@
     font-size: 1rem;
     font-weight: bold;
     text-shadow: 1px 1px 1px #000;
+    cursor: pointer;
 }
