@@ -46,10 +46,18 @@ export const Juego = () => {
 
             <div className='en-juego'>
 
-                <MusicButton toggleMusic={ toggleMusic }/>
-                {
-                    aparecerPalabra && <h2>Nivel: { `${currentLevel}, aciertos requeridos: ${aciertosRequeridos}` }</h2>
-                }
+                <div className={ !aparecerPalabra ? 'en-juego__header' : `en-juego__header level-active`}>
+
+                    {
+                        aparecerPalabra && <h2 className='h2-level'>Nivel: { `${currentLevel}` }</h2>
+                    }
+
+                    <MusicButton toggleMusic={ toggleMusic }/>
+
+                    
+                </div>
+
+                
                 
 
                 {

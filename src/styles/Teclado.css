@@ -5,26 +5,33 @@
     justify-content: center;
     align-items: center;
     padding: 5px 10px;
-    
+    margin-top: 50px;
     border-radius: 5px 10px;
-    box-shadow: 0 4px 3px #b8b8b8,
+    /*box-shadow: 0 4px 3px #b8b8b8,
     -2px 0 3px #e7e7e7,
     0 -2px 3px #fdfdfd,
-    2px 0 3px #d7d7d7;
+    2px 0 3px #d7d7d7;*/
 }
 
 .teclas-container {
     display: flex;
-    padding: 2px;
+    padding: 5px;
     font-family: sans-serif;
-    
+    gap: 5px;
 }
 
 .teclas-container__letra {
     background-color: #706b6b;
     border-radius: 5px;
     padding: 5px 5px 8px;
+    font-family: 'Bebas Neue', cursive;
+    transition: all .3s;
 }
+
+.teclas-container__letra:hover {
+    transform: scale(.9);
+}
+
 
 .letra-title {
     width: 65px;
@@ -32,8 +39,8 @@
     font-size: 1.5rem;
     text-transform: capitalize;
     display: inherit;
-    padding: 2px 3px;
-    
+    padding: 6px 8px;
+    cursor: pointer;
     background: linear-gradient(140deg, #fdfdfd, #f7f4f4);
     box-shadow: 
          0 4px 3px #b8b8b8,
@@ -41,4 +48,9 @@
          0 -2px 3px #fdfdfd,
          2px 0 3px #d7d7d7;
     border-radius: 5px;
+    transition: all .3s;
+}
+
+.letra-title:hover {
+    transform: scale(.9);
 }

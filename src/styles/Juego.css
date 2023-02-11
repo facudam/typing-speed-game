@@ -79,6 +79,31 @@
     padding: 50px;
 }
 
+.en-juego__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    max-width: var(--web-max-width);
+    margin: auto;
+    margin-bottom: 25px;
+    padding: 15px;
+    
+
+}
+
+.level-active {
+    justify-content: space-between;
+}
+
+.h2-level {
+    background-color: var(--azul);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
 .p-enter-press {
     margin-top: 25px;
     color: rgb(37, 173, 222);
@@ -110,6 +135,7 @@
 }
 
 .fondo-empezar-juego img {
+    
     width: 500px;  
 }
 
@@ -118,13 +144,10 @@
 
 .muted-btn-container {
     display: flex;
-    width: 100%;
-    max-width: var(--web-max-width);
-    margin: auto;
     justify-content: end;
     align-items: center;
-
 }
+
 
 .muted-btn-container img {
     width: 45px;

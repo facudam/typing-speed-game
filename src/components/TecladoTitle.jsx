@@ -4,7 +4,7 @@ import '../styles/Teclado.css'
 
 export const TecladoTitle = () => {
 
-    let typing = ['t', 'i', 'p', 'i', 'n', 'g'],
+    let typing = ['t', 'y', 'p', 'i', 'n', 'g'],
         speed = ['s', 'p', 'e', 'e', 'd'],
         game = ['g', 'a', 'm', 'e'];
 

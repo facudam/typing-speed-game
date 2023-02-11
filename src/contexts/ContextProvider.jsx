@@ -34,6 +34,8 @@ export const ContextProvider = ({children}) => {
     const [ musicOn, setMusicOn ] = useState(true)
     const [ levelPassed, setLevelPassed ] = useState(false)
 
+    const [ teclaPresionada, setTeclaPresionada ] = useState(false)
+
     
 
     const changeLevelRequirements = () => {
@@ -131,7 +133,9 @@ export const ContextProvider = ({children}) => {
             aciertosRequeridos,
             setAciertosRequeridos,
             verificarAciertos,
-            changeLevelRequirements
+            changeLevelRequirements,
+            teclaPresionada,
+            setTeclaPresionada
             }} >{ children }</Context.Provider>
     )
 }

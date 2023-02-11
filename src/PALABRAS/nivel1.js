@@ -60,7 +60,7 @@ export const palabrasDeNivel1 = [
     "fenomenal",
     "forastero",
     "prevencion",
-    "patriarcal",
+    "practicamente",
     "perfecto",
     "patriotico",
     "progresar",

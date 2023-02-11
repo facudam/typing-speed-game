@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { Context } from '../contexts/Context';
+
 import { SectionInvitarJuego } from './SectionInvitarJuego';
 import tipearIMG from '../images/tipearIMG.png';
 import flechaAbajo from '../images/flechaAbajo.png';
