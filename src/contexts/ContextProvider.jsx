@@ -41,20 +41,20 @@ export const ContextProvider = ({children}) => {
     const changeLevelRequirements = () => {
         switch (currentLevel) {
             case 1:
-                setSegundos(10)
-                setAciertosRequeridos(0)
-                break;
-            case 2:
-                setSegundos(10)
+                setSegundos(15)
                 setAciertosRequeridos(1)
                 break;
+            case 2:
+                setSegundos(15)
+                setAciertosRequeridos(2)
+                break;
             case 3:
-                setSegundos(10)
+                setSegundos(12)
                 setAciertosRequeridos(2)
                 break;
             case 4:
-                setSegundos(8)
-                setAciertosRequeridos(2)
+                setSegundos(10)
+                setAciertosRequeridos(3)
                 break;
             case 5:
                 setSegundos(10)
@@ -81,16 +81,16 @@ export const ContextProvider = ({children}) => {
             setLevelPassed(true)
             setEnJuego(false)
             setSegundosActivados(false)
-
+            
                 setTimeout(()=> {
-                    setCurrentLevel( currentLevel + 1)
-                    setJuegoActivado(true)
-                    setSegundosActivados(true)
-                    setEnJuego(true)
+                    setCurrentLevel( currentLevel + 1) 
                     setPalabraTipeada('')
                     setLevelPassed(false)
                     setLevelPassed(false)
                     setAciertos(0)
+                    setSegundosActivados(true)
+                    setEnJuego(true)
+                    setJuegoActivado(true)
                     
             }, 5000)
         }

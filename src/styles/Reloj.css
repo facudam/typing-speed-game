@@ -1,12 +1,13 @@
 
 .reloj-container {
-    border: 2px solid rgb(29, 137, 137);
-    width: 120px;
-    margin: auto;
-    margin-bottom: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 130px;
+    border: 2px outset rgb(29, 137, 137);
+    margin: auto;
+    margin-bottom: 45px;
+    border-radius: 5px;
     
 }
 
@@ -16,6 +17,7 @@
 }
 
 .reloj-container p {
+    display: inline-block;
     font-size: 3.4rem;
     color: rgb(29, 137, 137);
 }

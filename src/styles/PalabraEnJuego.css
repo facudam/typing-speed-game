@@ -37,6 +37,21 @@
     outline: none;
 }
 
+@media screen and (max-width: 550px) {
+    .palabra-container {
+        gap: 2px;
+    }
+
+    .letra-container {
+        font-size: .8rem;
+    }
+
+    .tipeo-container__letra {
+        font-size: .5rem;
+        width: 20px;
+    }
+}
+
 
 .tiempo {
     border: 5px solid red;

@@ -1,6 +1,8 @@
 .main-container {
     width: 100%;
-    background-color: var(--alice-blue);
+    background-color: rgb(125, 207, 237);
+   
+   
 }
 
 .header__container {
@@ -14,7 +16,6 @@
 }
 
 .header__container-title {
-    background-color: var(--alice-blue);
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -26,6 +27,7 @@
 .header__container-title h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #fff;
 }
 
 .header__container-title p {

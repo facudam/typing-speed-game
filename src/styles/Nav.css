@@ -24,14 +24,26 @@
 .header__menu nav ul{
     display: flex;
     list-style: none;
-}
-
-.header__menu nav ul li {
-    margin-left: 40px;
+    gap: 40px;
 }
 
 .span-record {
     color: rgb(255, 0, 0);
     font-weight: bold;
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 660px) {
+    .main-container-menu {
+        font-size: 1.1rem;
+    }
+    .header__menu nav ul {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width:483px) {
+    .header__menu nav ul li:first-child {
+        display: none
+    };
 }

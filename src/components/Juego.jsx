@@ -12,7 +12,7 @@ import { TecladoTitle } from './TecladoTitle';
 
 export const Juego = () => {
 
-    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, musicOn, setMusicOn, currentLevel, aciertosRequeridos } = useContext(Context);
+    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, musicOn, setMusicOn, currentLevel } = useContext(Context);
 
     useEffect(() => {
       
@@ -22,7 +22,7 @@ export const Juego = () => {
             document.removeEventListener('keydown', activarJuego)
         }
 
-    }, [])  
+    }, []) 
 
 
     const toggleMusic = () => {

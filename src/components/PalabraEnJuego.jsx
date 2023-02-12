@@ -122,6 +122,7 @@ export const PalabraEnJuego = () => {
             {
                 levelPassed && <YouWin />
             }
+
             
         </>
         

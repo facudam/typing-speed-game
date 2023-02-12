@@ -21,6 +21,7 @@ export const Teclas = ({titulo}) => {
             {
                 titulo.map((letra, index) => (
                     <div
+                        key={ index }
                         onMouseOver={ activarSonidoTecla } 
                         className='teclas-container__letra'>
                         <p className="letra-title" key={ index }>

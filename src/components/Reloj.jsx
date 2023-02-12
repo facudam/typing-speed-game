@@ -11,7 +11,7 @@ export const Reloj = () => {
 
     const tiempoDeJuego = () => {
 
-        if (segundos > 1) {
+        if (segundos !== 0) {
             setSegundos( segundos - 1)
             clearInterval(intervaloDeJuego)
         
