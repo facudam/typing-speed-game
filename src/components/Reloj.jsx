@@ -6,20 +6,20 @@ import "../styles/Reloj.css"
 
 export const Reloj = () => {
 
-    const { setAparecerPalabra, setPalabraTipeada, setJuegoActivado, setSegundosActivados, setPuntaje, setTiempoTerminado, setEnJuego, setAciertos, setCurrentLevel, segundos, setSegundos } = useContext(Context);
+    const { setAparecerPalabra, setPalabraTipeada, setJuegoActivado, setSegundosActivados, setPuntaje, setTiempoTerminado, setEnJuego, setAciertos, setCurrentLevel, segundos, setSegundos, levelPassed, tiempoTerminado } = useContext(Context);
 
 
     const tiempoDeJuego = () => {
 
-        if (segundos !== 0) {
+        if (segundos >= 1 && !levelPassed && !tiempoTerminado) {
             setSegundos( segundos - 1)
             clearInterval(intervaloDeJuego)
         
         } else {
+            clearInterval(intervaloDeJuego)
             setEnJuego(false)
             setTiempoTerminado(true)
             setSegundosActivados(false)
-            clearInterval(intervaloDeJuego)
             setAciertos(0)
 
             setTimeout(()=> {
