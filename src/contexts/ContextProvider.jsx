@@ -82,6 +82,7 @@ export const ContextProvider = ({children}) => {
             setEnJuego(false)
             setSegundosActivados(false)
             
+            
                 setTimeout(()=> {
                     setCurrentLevel( currentLevel + 1) 
                     setPalabraTipeada('')

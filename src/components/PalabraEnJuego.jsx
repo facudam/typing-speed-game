@@ -72,13 +72,13 @@ export const PalabraEnJuego = () => {
                 
                 setTimeout(()=> {
                     setCurrentLevel(1)
-                    setJuegoActivado(false)
                     setEnJuego(true)
                     setPuntaje(0)
                     setPalabraTipeada('')
                     setAparecerPalabra(false)
                     setJuegoPerdido(false)
-                    setAciertos(0) 
+                    setAciertos(0)
+                    setJuegoActivado(false) 
                     
             }, 5000)
 

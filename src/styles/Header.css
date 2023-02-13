@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .main-container {
     width: 100%;
     background-color: #fff;
@@ -41,11 +43,14 @@
 .header__container-title p {
     font-size: 1.3rem;
     letter-spacing: .5px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 800px;
+    margin-bottom: 15px;
 }
 
 
 .header__container button {
-    padding: 15px 25px;
+    padding: 10px 35px;
     text-transform: uppercase;
     border: none;
     background-color: var(--color-verde);
