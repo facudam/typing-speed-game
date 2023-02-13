@@ -29,8 +29,7 @@ export const Reloj = () => {
                 setTiempoTerminado(false)
                 setPuntaje(0)
                 setPalabraTipeada('')
-                setJuegoActivado(false)
-                setJuegoPerdido(false)         
+                setJuegoActivado(false)        
                           
             }, 5000)
         }       

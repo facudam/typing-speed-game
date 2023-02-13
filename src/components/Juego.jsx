@@ -12,7 +12,7 @@ import { TecladoTitle } from './TecladoTitle';
 
 export const Juego = () => {
 
-    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, musicOn, setMusicOn, currentLevel } = useContext(Context);
+    const { juegoActivado, setJuegoActivado, aparecerPalabra, setAparecerPalabra, musicOn, setMusicOn, currentLevel, changeLevelRequirements, tiempoTerminado } = useContext(Context);
 
     useEffect(() => {
       
@@ -23,6 +23,11 @@ export const Juego = () => {
         }
 
     }, []) 
+
+    useEffect(() => {
+        changeLevelRequirements()
+        console.log('changeTimed active')
+      }, [ currentLevel, tiempoTerminado ])
 
 
     const toggleMusic = () => {

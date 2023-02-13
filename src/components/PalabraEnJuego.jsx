@@ -35,14 +35,7 @@ export const PalabraEnJuego = () => {
         }
 
    }, [ puntaje ])
-
-  
-  useEffect(() => {
-    changeLevelRequirements()
-    console.log('changeTimed active')
-  }, [ currentLevel ])
     
- 
 
     const handleKeydown = (e) => {     
         const letraApretada = e.key;

@@ -19,7 +19,7 @@ export const ContextProvider = ({children}) => {
 
     // ++++ Estados para el tiempo de juego y para niveles ++++ //
     const [ segundosActivados, setSegundosActivados ] = useState(false)
-    const [ segundos, setSegundos ] = useState(10)
+    const [ segundos, setSegundos ] = useState()
     
     const [ currentLevel, setCurrentLevel ] = useState(1)
     const [ levelStage, setLevelStage ] = useState(1)
