@@ -1,54 +1,95 @@
 .main-container {
     width: 100%;
-    background-color: rgb(125, 207, 237);
-   
-   
+    background-color: #fff;
+    height: calc(100vh - 52px );
+    background-image: url(../images/Colored-Shapes.svg);
+    font-family: 'Bebas Neue', cursive;
+    
 }
 
 .header__container {
     width: 100%;
     max-width: var(--web-max-width);
-    height: 55vh;
+    height: calc(100vh - 52px);
     margin: auto;
-    display: flex;
-    padding: 50px;
-    
-}
-
-.header__container-title {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 50px;
+    gap: 100px;
+    
+}
+
+.header__container-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+    
 }
 
 .header__container-title h1 {
-    font-size: 2.5rem;
+    font-size: 3.6rem;
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--azul);
+    text-shadow: 2px 2px 2px #000;
+    letter-spacing: 1px;
 }
 
 .header__container-title p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    letter-spacing: .5px;
 }
 
-.header__container-img {
-    
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.header__container button {
+    padding: 15px 25px;
+    text-transform: uppercase;
+    border: none;
+    background-color: var(--color-verde);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 150px;
+    font-family: 'Bebas Neue', cursive;
+    transition: all .5s ease;
 }
 
-.a__flecha {
-    display: flex;
-    width: 100%;
-    padding-bottom: 15px;
+.header__container button:hover {
+    background-color: rgb(255, 255, 255);
+    outline: 2px solid rgb(16, 237, 16);
+    color: rgb(16, 237, 16);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+
 }
 
-.a__flecha img {
-    width: 70px;
-    margin: auto;
+@media screen and (max-width: 900px) {
+    .header__container-title {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .header__container {
+        gap: 15px;
+        text-align: center;
+    }
+    .header__container button {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header__container-title h1 {
+        font-size: 2.4rem;
+    }
+    .header__container-title p {
+        font-size: 1rem;
+    }
+    .header__container button {
+        font-size: 1.1rem;
+        padding: 10px 20px;  
+    }
 }
