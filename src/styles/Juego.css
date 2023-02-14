@@ -76,9 +76,7 @@
 }
 
 
-.en-juego {
-    padding: 50px;
-}
+
 
 .en-juego__header {
     display: flex;
@@ -90,7 +88,6 @@
     margin-bottom: 25px;
     padding: 15px;
     
-
 }
 
 .level-active {
