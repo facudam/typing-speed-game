@@ -7,7 +7,7 @@ export const NivelSuperado = () => {
 
     return(
         <div className='nivel-superado'>
-            <p className={`congrats`}>¡Excelente, pasaste de nivel!</p>
+            <p className='congrats'>¡Excelente, pasaste de nivel!</p>
             <img className='animate__heartBeat' src={ trofeo } alt='trofeo, premio'/>
             <Requerimientos />
         </div>
