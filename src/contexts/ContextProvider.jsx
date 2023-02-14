@@ -19,7 +19,7 @@ export const ContextProvider = ({children}) => {
 
     // ++++ Estados para el tiempo de juego y para niveles ++++ //
     const [ segundosActivados, setSegundosActivados ] = useState(false)
-    const [ segundos, setSegundos ] = useState()
+    const [ segundos, setSegundos ] = useState(15)
     
     const [ currentLevel, setCurrentLevel ] = useState(1)
     const [ levelStage, setLevelStage ] = useState(1)
@@ -41,38 +41,56 @@ export const ContextProvider = ({children}) => {
     const changeLevelRequirements = () => {
         switch (currentLevel) {
             case 1:
-                setSegundos(15)
                 setAciertosRequeridos(1)
                 break;
             case 2:
-                setSegundos(15)
                 setAciertosRequeridos(2)
                 break;
             case 3:
-                setSegundos(12)
                 setAciertosRequeridos(2)
                 break;
             case 4:
-                setSegundos(10)
                 setAciertosRequeridos(3)
                 break;
             case 5:
-                setSegundos(10)
                 setAciertosRequeridos(2)
                 break;
             case 6:
-                setSegundos(9)
                 setAciertosRequeridos(3)
                 break;
             case 7:
-                setSegundos(8)
                 setAciertosRequeridos(3)
             default:
-                setSegundos(100)
                 setAciertosRequeridos(100)
                 break;
         }
 
+    }
+
+    const changeSecondsDuration = () => {
+        switch (currentLevel) {
+            case 1:
+                setSegundos(15)
+                break;
+            case 2:
+                setSegundos(12)
+                break;
+            case 3:
+                setSegundos(10)
+                break;
+            case 4:
+                setSegundos(10)
+                break;
+            case 5:
+                setSegundos(9)
+                break;
+            case 6:
+                setSegundos(8)
+                break;
+            default:
+                setSegundos(100)
+                break;
+        }
     }
 
 
@@ -81,14 +99,15 @@ export const ContextProvider = ({children}) => {
             setLevelPassed(true)
             setEnJuego(false)
             setSegundosActivados(false)
-            
-            
+            setSegundos(15)
+
                 setTimeout(()=> {
+                    changeSecondsDuration()
                     setCurrentLevel( currentLevel + 1) 
                     setPalabraTipeada('')
                     setLevelPassed(false)
                     setLevelPassed(false)
-                    setAciertos(0)
+                    setAciertos(0) 
                     setSegundosActivados(true)
                     setEnJuego(true)
                     setJuegoActivado(true)

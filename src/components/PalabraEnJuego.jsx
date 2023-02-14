@@ -15,7 +15,7 @@ import { YouWin } from "./YouWin";
 
 export const PalabraEnJuego = () => {
 
-    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, currentLevel, setCurrentLevel, aciertos, setAciertos, levelPassed, verificarAciertos,changeLevelRequirements } = useContext(Context)
+    const { setJuegoActivado, puntaje, setPuntaje, mejorPuntaje, setMejorPuntaje, palabraTipeada, setPalabraTipeada, setAparecerPalabra, juegoPerdido, setJuegoPerdido, segundosActivados, setSegundosActivados, tiempoTerminado, enJuego, setEnJuego, musicOn, currentLevel, setCurrentLevel, aciertos, setAciertos, levelPassed, verificarAciertos,setSegundos } = useContext(Context)
     
     
    useEffect(() => {
@@ -73,6 +73,7 @@ export const PalabraEnJuego = () => {
                 setTimeout(()=> {
                     setCurrentLevel(1)
                     setEnJuego(true)
+                    setSegundos(15)
                     setPuntaje(0)
                     setPalabraTipeada('')
                     setAparecerPalabra(false)

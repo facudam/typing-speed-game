@@ -23,13 +23,14 @@ export const Reloj = () => {
             setAciertos(0)
 
             setTimeout(()=> {
+                setSegundos(15)
                 setCurrentLevel(1)
                 setAparecerPalabra(false)
                 setEnJuego(true)
                 setTiempoTerminado(false)
                 setPuntaje(0)
                 setPalabraTipeada('')
-                setJuegoActivado(false)        
+                setJuegoActivado(false)       
                           
             }, 5000)
         }       
