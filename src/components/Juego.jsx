@@ -56,10 +56,9 @@ export const Juego = () => {
                     {
                         aparecerPalabra && <h2 className='h2-level'>Nivel: { `${currentLevel}` }</h2>
                     }
-
-                    <MusicButton toggleMusic={ toggleMusic }/>
-
                     
+                    <MusicButton toggleMusic={ toggleMusic }/>
+                 
                 </div>
 
                 

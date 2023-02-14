@@ -7,7 +7,7 @@ export const Nav = () => {
     return(
         <div className='main-container-menu'>
             <div className="header__menu">
-                <span><a href='http://localhost:3000/'>Typing Speed Game</a></span>
+                <span><a href='https://typing-speed-game-1.netlify.app/'>Typing Speed Game</a></span>
                 <nav>
                     <ul>
                         <li>Puntaje: { puntaje } pts.</li>
