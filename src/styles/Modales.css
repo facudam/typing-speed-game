@@ -160,22 +160,20 @@
     
 }
 
-.nivel-superado__requerimientos {
-    padding: 0px;
-    top: 60%;
-    animation: aparicion 2s ease;
-}
 
-.nivel-superado__requerimientos p {
+.requerimientos p {
+    animation: aparicion 2s ease;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 1px;
     font-size: 1.3rem;
+    text-align: center;
 
 }
 
-.nivel-superado__requerimientos p span {
+.requerimientos p span {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
 
 

@@ -15,7 +15,6 @@ export const YouWin = () => {
             {
                 musicOn && <audio src={ ganaste } autoPlay ></audio>
             }
-            <Requerimientos />
         </>
     )
 }

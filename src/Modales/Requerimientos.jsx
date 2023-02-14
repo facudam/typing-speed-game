@@ -42,7 +42,7 @@ export const Requerimientos = () => {
     }
 
   return (
-    <div className={`nivel-superado nivel-superado__requerimientos`}>
+    <div className="requerimientos">
         <p>Próximo Nivel: <span>{ currentLevel + 1 }</span></p>
         <p>Palabras Requeridas: <span>{ aciertoSolicitado }</span></p>
         <p>Tiempo de Juego: <span>{ segundosDeJuego } segundos</span></p>

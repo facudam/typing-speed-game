@@ -85,7 +85,6 @@
     width: 100%;
     max-width: var(--web-max-width);
     margin: auto;
-    margin-bottom: 25px;
     padding: 15px;
     
 }
@@ -103,7 +102,6 @@
 }
 
 .p-enter-press {
-    margin-top: 25px;
     color: rgb(37, 173, 222);
     font-size: 1.7rem;
     text-align: center;
