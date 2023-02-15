@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useContext } from "react";
+import { useEffect, useMemo, useContext, useCallback } from "react";
 import { Context } from "../contexts/Context";
 import { palabrasDeNivel1 } from "../PALABRAS/nivel1";
 import { palabrasDeNivel2 } from "../PALABRAS/nivel2";
@@ -19,6 +19,8 @@ export const PalabraEnJuego = () => {
     
     
    useEffect(() => {
+
+
      window.addEventListener('keydown', handleKeydown)
      
 
@@ -42,7 +44,6 @@ export const PalabraEnJuego = () => {
         setPalabraTipeada(prevPalabra => prevPalabra + letraApretada)      
       }
 
-    
    // Si el currentLevel es menor 0 igual a 3, inicializamos las palabras de nivel 1. Sino, accedemos a las palabras de nivel 2. 
    // Una vez ya accedida la lista de palabras, guardamos la palabra retornada para evitar que se vuelva a cargar tras un cambio de estado en la app.
 
@@ -54,41 +55,40 @@ export const PalabraEnJuego = () => {
 
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
-   
 
-    const compararPalabras = () => {
-        if(palabraTipeada.length >= palabraRandom.length) {
-            if(palabraRandom.toUpperCase() === palabraTipeada.toUpperCase()) {
-                setPuntaje(puntaje + 10)
-                setPalabraTipeada('')
-                setAciertos(aciertos + 1)
-                
-                verificarAciertos()
-            
-            } else {
-                setEnJuego(false)
-                setJuegoPerdido(true)
-                setSegundosActivados(false)
-                
-                setTimeout(()=> {
-                    setCurrentLevel(1)
-                    setEnJuego(true)
-                    setSegundos(15)
-                    setPuntaje(0)
-                    setPalabraTipeada('')
-                    setAparecerPalabra(false)
-                    setJuegoPerdido(false)
-                    setAciertos(0)
-                    setJuegoActivado(false) 
-                    
-            }, 5000)
-
-            }  
-        }
+   const compararPalabras = useCallback(() => {
+    if(palabraTipeada.length >= palabraRandom.length) {
+      if(palabraRandom.toUpperCase() === palabraTipeada.toUpperCase()) {
+        setPuntaje(puntaje + 10)
+        setPalabraTipeada('')
+        setAciertos(aciertos + 1)
+        verificarAciertos()
+      } else {
+        setEnJuego(false)
+        setJuegoPerdido(true)
+        setSegundosActivados(false)
+        
+        setTimeout(()=> {
+          setCurrentLevel(1)
+          setEnJuego(true)
+          setSegundos(15)
+          setPuntaje(0)
+          setPalabraTipeada('')
+          setAparecerPalabra(false)
+          setJuegoPerdido(false)
+          setAciertos(0)
+          setJuegoActivado(false) 
+        }, 5000)
+      }  
     }
+  }, [palabraTipeada, palabraRandom, puntaje, aciertos, setPuntaje, setPalabraTipeada, setAciertos, verificarAciertos, setEnJuego, setJuegoPerdido, setSegundosActivados, setCurrentLevel, setSegundos, setAparecerPalabra, setJuegoActivado])
 
     
-    (!tiempoTerminado && !juegoPerdido && !levelPassed) && compararPalabras()
+     useEffect(() => {
+    if (!tiempoTerminado && !juegoPerdido && !levelPassed) {
+      compararPalabras();
+    }
+  }, [ tiempoTerminado, juegoPerdido, levelPassed ]);
     
 
     
