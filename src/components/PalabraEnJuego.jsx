@@ -106,7 +106,7 @@ export const PalabraEnJuego = () => {
             }
 
             {
-                (tiempoTerminado && !juegoPerdido && !levelPassed) && <TimeOver />
+                (tiempoTerminado && !juegoPerdido) && <TimeOver />
             }
 
             {
