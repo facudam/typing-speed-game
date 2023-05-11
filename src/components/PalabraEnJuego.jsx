@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useContext, useCallback } from "react";
+import { useEffect, useMemo, useContext } from "react";
 import { Context } from "../contexts/Context";
 import { palabrasDeNivel1 } from "../PALABRAS/nivel1";
 import { palabrasDeNivel2 } from "../PALABRAS/nivel2";
@@ -56,34 +56,37 @@ export const PalabraEnJuego = () => {
    const letrasDePalabra = palabraRandom.toUpperCase().split('')
 
 
-   const compararPalabras = useCallback(() => {
+   const compararPalabras = () => {
     if(palabraTipeada.length >= palabraRandom.length) {
-      if(palabraRandom.toUpperCase() === palabraTipeada.toUpperCase()) {
-        setPuntaje(puntaje + 10)
-        setPalabraTipeada('')
-        setAciertos(aciertos + 1)
-        verificarAciertos()
-      } else {
-        setEnJuego(false)
-        setJuegoPerdido(true)
-        setSegundosActivados(false)
-        
-        setTimeout(()=> {
-          setCurrentLevel(1)
-          setEnJuego(true)
-          setSegundos(15)
-          setPuntaje(0)
-          setPalabraTipeada('')
-          setAparecerPalabra(false)
-          setJuegoPerdido(false)
-          setAciertos(0)
-          setJuegoActivado(false) 
-        }, 5000)
-      }  
-    }
-  }, [palabraTipeada, palabraRandom, puntaje, aciertos, setPuntaje, setPalabraTipeada, setAciertos, verificarAciertos, setEnJuego, setJuegoPerdido, setSegundosActivados, setCurrentLevel, setSegundos, setAparecerPalabra, setJuegoActivado])
+        if(palabraRandom.toUpperCase() === palabraTipeada.toUpperCase()) {
+            setPuntaje(puntaje + 10)
+            setPalabraTipeada('')
+            setAciertos(aciertos + 1)
 
-    
+            verificarAciertos()
+
+        } else {
+            setEnJuego(false)
+            setJuegoPerdido(true)
+            setSegundosActivados(false)
+
+            setTimeout(()=> {
+                setCurrentLevel(1)
+                setEnJuego(true)
+                setSegundos(15)
+                setPuntaje(0)
+                setPalabraTipeada('')
+                setAparecerPalabra(false)
+                setJuegoPerdido(false)
+                setAciertos(0)
+                setJuegoActivado(false) 
+
+        }, 5000)
+
+        }  
+    }}
+
+    (!tiempoTerminado && !juegoPerdido && !levelPassed) && compararPalabras()
      useEffect(() => {
     if (!tiempoTerminado && !juegoPerdido && !levelPassed) {
       compararPalabras();
