@@ -35,21 +35,55 @@
     gap: 5px;
     font-size: 3.6rem;
     margin-bottom: 5px;
-    color: var(--azul);
+    color: #010101;
     font-family: 'Playfair Display SC', serif;
-    margin-right: 5px;
+    margin-right: 5px; 
 }
 
 .header__container-title h1 span:first-child {
-    animation: tipear 1.2s ease-in-out infinite;
+    
+    position: relative;
+    z-index: 999;
 }
 
 .header__container-title h1 span:nth-child(2) {
-    animation: tipear 1.5s ease-in-out infinite;
+   
+    position: relative;
 }
 
 .header__container-title h1 span:nth-child(3) {
-    animation: tipear 1.3s ease-in-out  infinite;
+    
+    position: relative;
+}
+
+.header__container-title h1 span:first-child::after {
+    content: 'Typing';
+    font-size: 3.6rem;
+    color: var(--azul);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: tipear 1.2s ease 3s infinite;
+}
+
+.header__container-title h1 span:nth-child(2)::after {
+    content: 'Speed';
+    font-size: 3.6rem;
+    color: var(--azul);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: tipear 1.2s ease 4s infinite;
+}
+
+.header__container-title h1 span:nth-child(3)::after {
+    content: 'Game';
+    font-size: 3.6rem;
+    color: var(--azul);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: tipear 1.2s ease 3.5s infinite;
 }
 
 .header__container-title p {
@@ -116,10 +150,17 @@
         transform: scale(1);
          
     }
+    30% {
+        transform: scale(1);
+        text-shadow: none;
+    }
     50%{
-        transform: scale(.9);
-        text-shadow: 1px 1px 3px black
-         
+        transform: scale(.93);
+        text-shadow: 0px 0px 3px #000000;    
+    }
+    80% {
+        transform: scale(1);
+        text-shadow: none;
     }
     100%{
         transform: scale(1);
