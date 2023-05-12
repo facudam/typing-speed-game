@@ -37,36 +37,36 @@
     margin-bottom: 5px;
     color: var(--azul);
     text-shadow: 2px 2px 2px #000;
-    letter-spacing: 1px;
+    font-family: 'Playfair Display SC', serif;
 }
 
 .header__container-title p {
     font-size: 1.2rem;
-    letter-spacing: .5px;
-    font-family: 'Roboto', sans-serif;
     max-width: 800px;
     margin-bottom: 10px;
+    color: #4b4a4a;
+    letter-spacing: 1px;
 }
 
 
 .header__container button {
-    padding: 10px 35px;
     text-transform: uppercase;
+    padding: 10px 35px;
     border: none;
     background-color: var(--color-verde);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Playfair Display SC', serif;
     transition: all .5s ease;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
 .header__container button:hover {
     background-color: rgb(255, 255, 255);
     outline: 2px solid rgb(16, 237, 16);
     color: rgb(16, 237, 16);
-    text-shadow: 1px 1px 1px rgb(0, 0, 0);
-
 }
 
 @media screen and (max-width: 900px) {

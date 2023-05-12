@@ -144,13 +144,12 @@
 }
 
 .congrats {
-    font-family: 'Bebas Neue', cursive;
     text-align: center;
-    letter-spacing: 1px;
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--azul);
     text-shadow: 1px 1px 1px #000;
+    text-transform: uppercase;
 }
 
 .nivel-superado img {
@@ -162,7 +161,6 @@
 
 .requerimientos p {
     animation: aparicion 2s ease;
-    font-family: 'Bebas Neue', cursive;
     letter-spacing: 1px;
     font-size: 1.3rem;
     text-align: center;
