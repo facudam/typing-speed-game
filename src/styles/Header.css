@@ -1,7 +1,7 @@
 
 .main-container {
     width: 100%;
-    background-color: #fff;
+    background-color: #ffffff;
     height: calc(100vh - 52px );
     background-image: url(../images/Colored-Shapes.svg);
     font-family: 'Bebas Neue', cursive;
@@ -27,6 +27,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 0 100px;
+    gap: 15px;
     
 }
 
@@ -35,69 +36,80 @@
     gap: 5px;
     font-size: 3.6rem;
     margin-bottom: 5px;
-    color: #010101;
     font-family: 'Playfair Display SC', serif;
     margin-right: 5px; 
+    color: #2196f3;
+    text-shadow: 0px 0px 0 rgb(10, 202, 227),
+                 0px 1px 0 rgb(10, 202, 227),
+                 0px 2px 0 rgb(-1,115,209),
+                 0px 3px 0 rgb(-13,103,197),
+                 0px 4px 0 rgb(-24,92,186),
+                 0px 5px 0 rgb(-35,81,175),
+                 0px 6px 0 rgb(-47,69,163),
+                 0px 7px 0 rgb(-58,58,152),
+                 0px 8px 0 rgb(-70,46,140),
+                 0px 9px 0 rgb(-81,35,129),
+                 0px 10px  0 rgb(-92,24,118),
+                 0px 11px 10px rgba(0,0,0,0.47),
+                 0px 11px 1px rgba(0,0,0,0.5),
+                 0px 0px 10px rgba(0,0,0,.2);
 }
 
 .header__container-title h1 span:first-child {
-    
     position: relative;
     z-index: 999;
 }
 
 .header__container-title h1 span:nth-child(2) {
-   
     position: relative;
 }
 
 .header__container-title h1 span:nth-child(3) {
-    
     position: relative;
 }
 
 .header__container-title h1 span:first-child::after {
     content: 'Typing';
-    font-size: 3.6rem;
     color: var(--azul);
     position: absolute;
     top: 0;
     left: 0;
-    animation: tipear 1.2s ease 3s infinite;
+    animation: tipear 2.3s ease  infinite;
 }
 
 .header__container-title h1 span:nth-child(2)::after {
     content: 'Speed';
-    font-size: 3.6rem;
     color: var(--azul);
     position: absolute;
     top: 0;
     left: 0;
-    animation: tipear 1.2s ease 4s infinite;
+    animation: tipear 1.8s ease  infinite;
 }
 
 .header__container-title h1 span:nth-child(3)::after {
     content: 'Game';
-    font-size: 3.6rem;
     color: var(--azul);
     position: absolute;
     top: 0;
     left: 0;
-    animation: tipear 1.2s ease 3.5s infinite;
+    animation: tipear 2s ease infinite;
 }
 
 .header__container-title p {
     font-size: 1.2rem;
     max-width: 800px;
-    margin-bottom: 10px;
-    color: #4b4a4a;
+    color: #201f1f;
     letter-spacing: 1px;
     line-height: 25px;
 }
 
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-.header__container button {
-    text-transform: uppercase;
+.btn-container button {
     padding: 10px 35px;
     border: none;
     background-color: var(--color-verde);
@@ -110,10 +122,20 @@
     text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
 
-.header__container button:hover {
+.btn-container button:hover {
     background-color: rgb(255, 255, 255);
     outline: 2px solid rgb(16, 237, 16);
     color: rgb(16, 237, 16);
+}
+
+.btn-container button:first-child {
+    background-color: rgb(10, 202, 227);
+}
+
+.btn-container button:first-child:hover {
+    background-color: rgb(255, 255, 255);
+    outline: 2px solid rgb(10, 202, 227);
+    color: rgb(10, 202, 227);
 }
 
 @media screen and (max-width: 900px) {
@@ -127,19 +149,19 @@
         gap: 15px;
         text-align: center;
     }
-    .header__container button {
+    .btn-container button {
         margin-bottom: 0;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .header__container-title h1 {
-        font-size: 2.4rem;
+    .header__container-title h1 span{
+        font-size: 2.6rem;
     }
     .header__container-title p {
         font-size: 1rem;
     }
-    .header__container button {
+    .btn-container button {
         font-size: 1.1rem;
         padding: 10px 20px;  
     }
@@ -150,17 +172,17 @@
         transform: scale(1);
          
     }
-    30% {
+    40% {
         transform: scale(1);
-        text-shadow: none;
+      
     }
     50%{
-        transform: scale(.93);
-        text-shadow: 0px 0px 3px #000000;    
+        transform: scale(.97);
+           
     }
-    80% {
+    70% {
         transform: scale(1);
-        text-shadow: none;
+       
     }
     100%{
         transform: scale(1);
