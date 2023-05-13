@@ -5,6 +5,7 @@ import { Nav } from './components/Nav'
 import { Juego } from './components/Juego'
 import './App.css';
 import { ReglasModal } from './Modales/ReglasModal'
+import { YouWin } from './components/YouWin'
 
 
 function App() {
@@ -24,7 +25,6 @@ function App() {
       {
         isReglasModalOpen && <ReglasModal />
       }
-      
     </div>
   )
 }

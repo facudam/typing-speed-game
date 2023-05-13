@@ -127,11 +127,11 @@
 /* +++++++ Nivel superado modal ++++++++ */
 .nivel-superado {
     width: 95%;
-    max-width: 600px;
+    max-width: 550px;
     margin: auto;
     overflow: hidden;
-    position: absolute;
-    top: 40%;
+    position: fixed;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -140,36 +140,52 @@
     align-items: center;
     animation: aparicion 1s ease;
     overflow: hidden;
-    
+    padding: 30px;
+    background-color: rgba(255,255,255);
+    border-radius: 10px;
+    border: 5px dashed rgb(99, 96, 96);
 }
 
 .congrats {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: var(--azul);
     text-shadow: 1px 1px 1px #000;
-    text-transform: uppercase;
 }
 
-.nivel-superado img {
-    width: 170px;
-    filter: drop-shadow(2px 2px 2px rgb(21, 21, 20));
+.nivel-superado__requerimientos {
+    width: 100%;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+   
+}
+
+.nivel-superado__requerimientos img {
+    width: 150px;
+    filter: drop-shadow(2px 2px 2px rgb(21, 21, 20)); 
+}
+
+.requerimientos {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     
 }
-
 
 .requerimientos p {
     animation: aparicion 2s ease;
     letter-spacing: 1px;
-    font-size: 1.3rem;
-    text-align: center;
-
+    font-size: 1.2rem;
+    /* color: #ffd700; */
+    /* text-shadow: 1px 1px 1px #000; */
 }
 
 .requerimientos p span {
-    font-size: 1.2rem;
-    font-weight: bold;
+    /* font-size: 1.5rem; */
+    /* text-shadow: 1px 1px 1px #000; */
 }
 
 
