@@ -5,7 +5,7 @@ import { Context } from '../contexts/Context';
 
 export const Header = () => {
 
-    const { setJuegoIniciado } = useContext(Context);
+    const { setJuegoIniciado, setIsReglasModalOpen} = useContext(Context);
 
     return(
      <>
@@ -25,7 +25,9 @@ export const Header = () => {
                         
                     </div>
                     <div className='btn-container'>
-                        <button>
+                        <button
+                            onClick={() => setIsReglasModalOpen(true)}
+                        >
                             Ver Reglas
                         </button>
                         <button

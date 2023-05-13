@@ -14,7 +14,6 @@
 .teclas-container {
     display: flex;
     padding: 5px;
-    font-family: sans-serif;
     gap: 5px;
     
 }
@@ -23,7 +22,7 @@
     background-color: #706b6b;
     border-radius: 5px;
     padding: 5px 5px 8px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Playfair Display SC', serif;
     transition: all .2s;
 }
 

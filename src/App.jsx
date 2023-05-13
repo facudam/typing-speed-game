@@ -4,11 +4,12 @@ import { Header } from './components/Header'
 import { Nav } from './components/Nav'
 import { Juego } from './components/Juego'
 import './App.css';
+import { ReglasModal } from './Modales/ReglasModal'
 
 
 function App() {
   
-  const { juegoIniciado } = useContext(Context)
+  const { juegoIniciado, isReglasModalOpen, setIsReglasModalOpen } = useContext(Context)
 
   return (
     <div className="App">
@@ -18,6 +19,10 @@ function App() {
           ? <Header />
             
           : <Juego />
+      }
+
+      {
+        isReglasModalOpen && <ReglasModal />
       }
       
     </div>

@@ -36,6 +36,7 @@ export const ContextProvider = ({children}) => {
 
     const [ teclaPresionada, setTeclaPresionada ] = useState(false)
 
+    const [ isReglasModalOpen, setIsReglasModalOpen ] = useState(false)
     
 
     const changeLevelRequirements = () => {
@@ -155,7 +156,9 @@ export const ContextProvider = ({children}) => {
             verificarAciertos,
             changeLevelRequirements,
             teclaPresionada,
-            setTeclaPresionada
+            setTeclaPresionada,
+            isReglasModalOpen, 
+            setIsReglasModalOpen
             }} >{ children }</Context.Provider>
     )
 }

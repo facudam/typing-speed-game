@@ -1,0 +1,73 @@
+.full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(33, 150, 243, .4);
+}
+
+.reglas-modal {
+    position: fixed;
+    width: 95%;
+    max-width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    animation: dropDown 1s ease forwards;
+}
+
+.reglas-modal h2 {
+    color: var(--azul);
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.reglas-modal ol {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reglas-modal ol li {
+    margin-left: 15px;
+    font-size: 1.2rem;
+    color: #2f2d2d;
+    padding-left: 5px;
+}
+
+.reglas-modal__btn-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reglas-modal__btn-container button {
+    background-color: rgb(255,0,0);
+    border: none;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #fff;
+    transition: background-color .5s ease;
+    cursor: pointer;
+}
+
+.reglas-modal__btn-container button:hover {
+    background-color: rgb(192, 8, 8);
+}
+
+@keyframes dropDown {
+    0% {
+        
+        top: -50%;
+    }
+  
+    50% {
+        top: 50%;
+    }
+}
