@@ -128,7 +128,6 @@
 .nivel-superado {
     width: 95%;
     max-width: 550px;
-    margin: auto;
     overflow: hidden;
     position: fixed;
     top: 45%;
@@ -140,10 +139,10 @@
     align-items: center;
     animation: aparicion 1s ease;
     overflow: hidden;
-    padding: 30px;
+    padding: 30px 0;
     background-color: rgba(255,255,255);
     border-radius: 10px;
-    border: 5px dashed rgb(99, 96, 96);
+    animation: dropDown 1s ease-in forwards;
 }
 
 .congrats {
@@ -165,6 +164,7 @@
 .nivel-superado__requerimientos img {
     width: 150px;
     filter: drop-shadow(2px 2px 2px rgb(21, 21, 20)); 
+    animation: heartBeat 1s ease-in .5s forwards;
 }
 
 .requerimientos {
@@ -183,10 +183,16 @@
     /* text-shadow: 1px 1px 1px #000; */
 }
 
-.requerimientos p span {
-    /* font-size: 1.5rem; */
-    /* text-shadow: 1px 1px 1px #000; */
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
-
 
 

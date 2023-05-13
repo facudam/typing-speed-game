@@ -3,8 +3,19 @@ import '../styles/Modales.css'
 import 'animate.css';
 import trofeo from '../images/trofeo.svg'
 import { Requerimientos } from './Requerimientos';
+import JSConfetti from 'js-confetti'
+
+const jsConfetti = new JSConfetti()
 
 export const NivelSuperado = () => {
+
+  jsConfetti.addConfetti({
+    confettiColors: [
+      '#ff0a54', '#2196f3', '#ff7096', '#10ed10', '#ffd700', '#f0f8ff',
+    ],
+  })
+
+  jsConfetti.addConfetti()
 
     return ReactDOM.createPortal(
       <>
@@ -12,7 +23,7 @@ export const NivelSuperado = () => {
         <div className='nivel-superado'>
             <p className='congrats'>¡Enhorabuena! ¡Lo has conseguido!</p>
             <div className='nivel-superado__requerimientos'>
-                <img className='animate__heartBeat' src={ trofeo } alt='trofeo, premio'/>
+                <img src={ trofeo } alt='trofeo, premio'/>
                 <Requerimientos />
             </div>
             
