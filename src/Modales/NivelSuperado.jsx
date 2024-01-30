@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom'
 import '../styles/Modales.css'
-import 'animate.css';
 import trofeo from '../images/trofeo.svg'
 import { Requerimientos } from './Requerimientos';
 import JSConfetti from 'js-confetti'
